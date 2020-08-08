@@ -4,8 +4,9 @@ import{Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { SingInComponent } from './sing-in/sing-in.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
+import { IntroductionComponent } from './introduction/introduction.component';
 const app_router :Routes=[
-{path:'' ,component: AppComponent},
+{path:'' ,component: IntroductionComponent},
 {path: 'sing-in', component :SingInComponent},
 {path:'sing-up',component:SingUpComponent}
 ];
@@ -13,7 +14,8 @@ const app_router :Routes=[
   declarations: [
     AppComponent,
      SingUpComponent,
-     SingInComponent
+     SingInComponent,
+     IntroductionComponent
   ],
   imports: [
     BrowserModule,
