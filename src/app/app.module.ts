@@ -4,6 +4,7 @@ import{Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { SingInComponent } from './sing-in/sing-in.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
+import { BasicInformationComponent } from './basic-information/basic-information.component';
 
 const app_router :Routes=[
 {path:'' ,component: AppComponent},
@@ -15,6 +16,7 @@ const app_router :Routes=[
     AppComponent,
      SingUpComponent,
      SingInComponent,
+     BasicInformationComponent,
    
   ],
   imports: [

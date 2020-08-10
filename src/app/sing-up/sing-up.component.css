@@ -16,7 +16,7 @@
 #Sing_up {
     position: absolute;
     width: 1920px;
-    height: 1080px;
+    height: 3315px;
     background-color: rgba(255,255,255,1);
     overflow: hidden;
     --web-view-name: Sing up;
@@ -109,36 +109,6 @@
     font-size: 20px;
     color: rgba(3,3,3,1);
 }
-.Rectangle_12 {
-    position: absolute;
-    overflow: visible;
-    width: 588px;
-    height: 69px;
-    left: 1178px;
-    top: 608px;
-    --web-animation: fadein 0.3s ease-out;
-    --web-action-type: page;
-    --web-action-target: Web_1920___1.html;
-    cursor: pointer;
-}
-#Sing_up_bv {
-    position: absolute;
-    left: 1426px;
-    top: 626px;
-    overflow: visible;
-    width: 101px;
-    white-space: nowrap;
-    --web-animation: fadein 0.3s ease-out;
-    --web-action-type: page;
-    --web-action-target: Web_1920___1.html;
-    cursor: pointer;
-    text-align: left;
-    font-family: Britannic;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    color: rgba(255,241,241,1);
-}
 #Group_5 {
     position: absolute;
     width: 264px;
@@ -147,7 +117,7 @@
     top: 138px;
     overflow: visible;
 }
-#Sing_up_bx {
+#Sing_up_bv {
     position: absolute;
     left: 61px;
     top: 0px;
@@ -268,6 +238,314 @@
     font-size: 20px;
     color: rgba(3,3,3,1);
 }
+#ID1_png {
+    position: absolute;
+    width: 1017px;
+    height: 661px;
+    left: 28px;
+    top: 326px;
+    overflow: visible;
+}
+#Group_6 {
+    position: absolute;
+    width: 768px;
+    height: 1459px;
+    left: 1051px;
+    top: 1304px;
+    overflow: visible;
+}
+#Rectangle_8 {
+    opacity: 0.81;
+}
+.Rectangle_8 {
+    filter: drop-shadow(20px 20px 20px rgba(9, 9, 9, 0.161));
+    position: absolute;
+    overflow: visible;
+    width: 828px;
+    height: 1519px;
+    left: 0px;
+    top: 0px;
+}
+.Rectangle_9_b {
+    position: absolute;
+    overflow: visible;
+    width: 587px;
+    height: 78px;
+    left: 90px;
+    top: 109px;
+}
+#School_Name {
+    position: absolute;
+    left: 144px;
+    top: 137px;
+    overflow: visible;
+    width: 119px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(152,139,139,1);
+}
+.Rectangle_15 {
+    position: absolute;
+    overflow: visible;
+    width: 587px;
+    height: 78px;
+    left: 92px;
+    top: 410px;
+}
+#School_Address {
+    position: absolute;
+    left: 129px;
+    top: 437px;
+    overflow: visible;
+    width: 139px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(152,139,139,1);
+}
+.Rectangle_16 {
+    position: absolute;
+    overflow: visible;
+    width: 587px;
+    height: 78px;
+    left: 90px;
+    top: 250px;
+}
+#Scientific {
+    position: absolute;
+    left: 144px;
+    top: 277px;
+    overflow: visible;
+    width: 81px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(152,139,139,1);
+}
+.Polygon_2 {
+    overflow: hidden;
+    position: absolute;
+    width: 23px;
+    height: 15px;
+    transform: translate(-583px, -245px) matrix(1,0,0,1,1203,540) rotate(180deg);
+    transform-origin: center;
+    left: 0px;
+    top: 0px;
+}
+#Conaction_info {
+    position: absolute;
+    left: 79px;
+    top: 925px;
+    overflow: visible;
+    width: 132px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(152,139,139,1);
+}
+.Rectangle_17 {
+    position: absolute;
+    overflow: visible;
+    width: 587px;
+    height: 78px;
+    left: 73px;
+    top: 993px;
+}
+#Phone_number {
+    position: absolute;
+    left: 88px;
+    top: 1020px;
+    overflow: visible;
+    width: 132px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(152,139,139,1);
+}
+.Rectangle_18 {
+    position: absolute;
+    overflow: visible;
+    width: 587px;
+    height: 78px;
+    left: 73px;
+    top: 1114px;
+}
+#Another_phone_number {
+    position: absolute;
+    left: 83px;
+    top: 1141px;
+    overflow: visible;
+    width: 210px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(152,139,139,1);
+}
+.Rectangle_12 {
+    position: absolute;
+    overflow: visible;
+    width: 588px;
+    height: 69px;
+    left: 59px;
+    top: 1303px;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: Web_1920___2.html;
+    cursor: pointer;
+}
+#Finish {
+    position: absolute;
+    left: 304px;
+    top: 1321px;
+    overflow: visible;
+    width: 81px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Britannic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(255,241,241,1);
+}
+#checkbox {
+    position: absolute;
+    overflow: visible;
+    width: 55px;
+    height: 57px;
+    left: 91px;
+    top: 570px;
+}
+
+#first_ {
+    position: absolute;
+    left: 171px;
+    top: 582px;
+    overflow: visible;
+    width: 65px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Britannic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(152,139,139,1);
+}
+.Rectangle_1544 {
+    position: absolute;
+    overflow: visible;
+    width: 55px;
+    height: 59px;
+    left: 90px;
+    top: 650px;
+}
+#seconde {
+    position: absolute;
+    left: 159px;
+    top: 663px;
+    overflow: visible;
+    width: 109px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Britannic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(152,139,139,1);
+}
+.Rectangle_1545 {
+    position: absolute;
+    overflow: visible;
+    width: 52px;
+    height: 57px;
+    left: 92px;
+    top: 739px;
+}
+#third {
+    position: absolute;
+    left: 171px;
+    top: 751px;
+    overflow: visible;
+    width: 65px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Britannic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(152,139,139,1);
+}
+.Rectangle_1546 {
+    position: absolute;
+    overflow: visible;
+    width: 55px;
+    height: 53px;
+    left: 90px;
+    top: 833px;
+}
+#all {
+    position: absolute;
+    left: 187px;
+    top: 843px;
+    overflow: visible;
+    width: 33px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Britannic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(152,139,139,1);
+}
+#ID4 {
+    position: absolute;
+    width: 849px;
+    height: 633.5px;
+    left: 122px;
+    top: 1494px;
+    overflow: visible;
+}
+.Line_17 {
+    overflow: visible;
+    position: absolute;
+    width: 1511.003px;
+    height: 5px;
+    left: 161.5px;
+    top: 1157.5px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Basic_info_ {
+    position: absolute;
+    left: 334px;
+    top: 1258px;
+    overflow: visible;
+    width: 236px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Britannic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    color: rgba(0,0,0,1);
+}
 #email{
     font-size: inherit;
     size: 14520px;
@@ -277,21 +555,4 @@
     background-color: rgba(254,246,246,0.329);
     border-color:rgba(254,246,246,0.329); 
 
-}
-
-#password{
-    size: 14520px;
-    width: 300px;
-    height: 50px;
-    left: 1179px;
-    background-color: rgba(254,246,246,0.329);
-    border-color:rgba(254,246,246,0.329); 	
-}
-#ID1_png {
-    position: absolute;
-    width: 1017px;
-    height: 661px;
-    left: 28px;
-    top: 326px;
-    overflow: visible;
 }
