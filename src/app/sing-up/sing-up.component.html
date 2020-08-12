@@ -21,9 +21,20 @@
 			<path fill="rgba(191,178,178,1)" id="ic_local_post_office_24px" d="M 20 4 L 4 4 C 2.900000095367432 4 2.009999990463257 4.900000095367432 2.009999990463257 6 L 2 18 C 2 19.10000038146973 2.900000095367432 20 4 20 L 20 20 C 21.10000038146973 20 22 19.10000038146973 22 18 L 22 6 C 22 4.900000095367432 21.10000038146973 4 20 4 Z M 20 8 L 12 13 L 4 8 L 4 6 L 12 11 L 20 6 L 20 8 Z">
 			</path>
 		</svg>
+		<form  	
+		#f="ngForm"	 
+		 (ngSubmit)="onSubmite(f)" >
 		<div id="Email_address">
 			<span>البريد الالكتروني   : </span>
-			<input type="email" id="email"  value ="example@gmail.com" > 
+			<input type="email" id="email"
+			ngModel
+			required
+			name ="email_address"
+			#e="ngModel"
+			  > 
+			  <span *ngIf="!e.valid && e.touched"  >
+				  please enter email address 
+			  </span>
 		</div>
 		<svg class="Rectangle_10">
 			<rect fill="rgba(254,246,246,0.329)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_10" rx="0" ry="0" x="0" y="0" width="587" height="78">
@@ -34,34 +45,23 @@
 			</path>
 		</svg>
 		<div id="Password">
-			<span>كلمة المرور  : </span>
+			<span> كلمة السر  :  </span>
 			<input type="password" 
+			required
 			id = "password"
-			value=""
-			>
-		</div>
-		<div id="Group_5">
-			<div id="Sing_up_bv">
-				<span>إنشاء حساب جديد</span>
-			</div>
-			<div id="Join_with_us">
-				<span>اضم لنا !!</span>
-			</div>
-		</div>
+			ngModel
+			name ="password"
+			#p="ngModel"
+				>
+				<span  *ngIf="!p.valid && p.touched">
+please enter password 
+				</span>
+		   </div>
+		
 		<div routerLink ="/sing-in" id="I_have_Account__">
 			<span>لدي حساب !!</span>
 		</div>
-		<svg class="Rectangle_5">
-			<rect fill="rgba(43,49,61,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_5" rx="0" ry="0" x="0" y="0" width="1920" height="110">
-			</rect>
-		</svg>
-		<div routerLink=''  id="Back">
-			<span>تراجع</span>
-		</div>
-		<div id="Symphonia_School">
-			<span>مدرسو سنفونيا </span>
-		</div>
-		<svg class="Rectangle_26">
+				<svg class="Rectangle_26">
 			<rect fill="rgba(254,246,246,0.329)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_26" rx="0" ry="0" x="0" y="0" width="587" height="78">
 			</rect>
 		</svg>
@@ -73,8 +73,17 @@
 			<span>التأكيد على كلمة المرور </span>
 			<input type="password" 
 			id = "password"
-			value=""
+			required
+			ngModel
+			name ="confirm_password"
+			#cp="ngModel"
 			>
+			<span *ngIf="(cp.value != p.value )  && cp.touched && p.valid && cp.valid">
+the entered password is not not the same 
+			</span>
+			<span *ngIf=" (!cp.valid  && cp.touched)">
+					please entered password 
+								</span>
 		</div>
 		<img id="ID1_png" src="ID1_png.png" srcset="ID1_png.png 1x, ID1_png@2x.png 2x">
 		<div id="Group_6">
@@ -90,8 +99,14 @@
 				<span>اسم المدرسة  : </span>
 				<input type="text" 
 			id = "email"
-			value=""
+			ngModel
+			required
+			name ="school_name"
+			#scname="ngModel"
 			>
+			<span
+			*ngIf="!scname.valid &&  scname.touched"
+			> please enter school name </span>
 			</div>
 			<svg class="Rectangle_15">
 				<rect fill="rgba(254,246,246,0.329)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_15" rx="0" ry="0" x="0" y="0" width="587" height="78">
@@ -101,8 +116,16 @@
 				<span>عنوان المدرسة   : </span>
 				<input type="text" 
 			id = "email"
-			value=""
+			ngModel
+			required
+			name ="school_address"
+			#schaddress="ngModel"
 			>
+			<span
+			*ngIf="!schaddress.valid && schaddress.touched "
+			>
+please entred school address
+			</span>
 			</div>
 			<svg class="Rectangle_16">
 				<rect fill="rgba(254,246,246,0.329)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_16" rx="0" ry="0" x="0" y="0" width="587" height="78">
@@ -110,19 +133,25 @@
 			</svg>
 			
 				<div id="Scientific">
-					<select    id ="email" >
+					<select  required 
+					ngModel
+					name ="geneder"
+					id ="email"
+					#gn="ngModel"
+					>
 							
 							<option  >	 
 								   ذكور</option>
 							<option >إناث</option>
 							<option> مختلط</option>
 						  </select>
+						  <span *ngIf="!gn.valid && gn.touched"> please select the gender </span>
 				</div>
 			<div id="Conaction_info">
 				<span>معلومات التواصل :  </span>
 				<input type="text" 
 			id = "email"
-			value=""
+			
 			>
 			</div>
 			<svg class="Rectangle_17">
@@ -133,8 +162,16 @@
 				<span>رقم هاتف المدرسة    : </span>
 				<input type="text" 
 			id = "email"
-			value=""
+			ngModel
+			required
+			name ="school_telephone_number"
+			#sctelephone="ngModel"
 			>
+			<span
+			*ngIf="!sctelephone.valid && sctelephone.touched"
+			>
+please entered the school number 
+			</span>
 			</div>
 			<svg class="Rectangle_18">
 				<rect fill="rgba(254,246,246,0.329)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_18" rx="0" ry="0" x="0" y="0" width="587" height="78">
@@ -144,36 +181,58 @@
 				<span>رقم هاتف ثان للمدرسة   : </span>
 				<input type="text" 
 			id = "email"
-			value=""
+			ngModel
+			required
+			name ="school_telephone_number2"
+			#schtelephone2="ngModel"
 			>
+			<span
+			*ngIf="!schtelephone2.valid && schtelephone2.touched"
+			>
+please entered the athore school number 
+			</span>
 			</div>
-			<svg class="Rectangle_12">
-				<rect fill="rgba(99,212,173,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" onclick="application.goToTargetView(event)" id="Rectangle_12" rx="10" ry="10" x="0" y="0" width="588" height="69">
-				</rect>
-			</svg>
-			<div id="Finish">
-				<span>انتهيت  </span>
-			</div>
+			<button>
+				<svg class="Rectangle_12">
+					<rect fill="rgba(99,212,173,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" onclick="application.goToTargetView(event)" id="Rectangle_12" rx="10" ry="10" x="0" y="0" width="588" height="69">
+					</rect>
+				</svg>
+	
+				<div id="Finish">
+					<span>انتهيت  </span>
+				</div>
+			</button>
+		
 
 			<div id="first_">
 				<input type="checkbox" 
 			id = "Rectangle_1543"
-			
+			required
+			ngModel
+			name="First_study_phase"
+			#first="ngModel"
 			>
-			<span> ابتدائي</span>
+			<span
+			> ابتدائي</span>
 			</div>
 			<div id="seconde">
 
 					<input type="checkbox" 
 			id = "Rectangle_1544"
-			
+			required
+			ngModel
+			name="seconde_study_phase"
+			#seconde="ngModel"
 			>
 				<span>إعدادي </span>
 			</div>
 			<div id="third">
 					<input type="checkbox" 
 					id = "Rectangle_1545"
-					
+					required
+					ngModel
+			name="third_study_phase"
+			#third="ngModel"
 					>	
 				<span> ثانوي </span>
 			</div>
@@ -181,10 +240,15 @@
 			<div id="all">
 					<input type="checkbox" 
 					id = "Rectangle_1546"
-					
+					required
+					ngModel
+			name="all"
+			#all="ngModel"
 					>	
 				<span>كافة المراحل</span>
-			</div>
+				<span *ngIf="!first.invalid && !seconde.invalid && !third.invalid  && !all.invalid "
+			>please select one of those options !!</span>
+			</div>	
 		</div>
 		<img id="ID4" src="ID4.png" srcset="ID4.png 1x, ID4@2x.png 2x">
 		<svg class="Line_17" viewBox="0 0 1511 4">
@@ -194,6 +258,27 @@
 		<div id="Basic_info_">
 			<span>المعلومات الأساسية   </span>
 		</div>
+	
+</form>
+<div id="Group_5">
+	<div id="Sing_up_bv">
+		<span>إنشاء حساب جديد</span>
 	</div>
+	<div id="Join_with_us">
+		<span>اضم لنا !!</span>
+	</div>
+</div>
+<svg class="Rectangle_5">
+	<rect fill="rgba(43,49,61,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_5" rx="0" ry="0" x="0" y="0" width="1920" height="110">
+	</rect>
+</svg>
+<div routerLink=''  id="Back">
+	<span>تراجع</span>
+</div>
+<div id="Symphonia_School">
+	<span>مدرسو سنفونيا </span>
+</div>
+
+</div>
 	</body>
 	</html>

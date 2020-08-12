@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SingInComponent } from './sing-in/sing-in.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { BasicInformationComponent } from './basic-information/basic-information.component';
+import { FormsModule } from '@angular/forms';
 
 const app_router :Routes=[
 {path:'' ,component: AppComponent},
@@ -21,7 +22,8 @@ const app_router :Routes=[
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(app_router)
+    RouterModule.forRoot(app_router),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@
 <div id="Sing_in">
 
        <img id ="ID9" src ="src\app\sing-in\id9.png"> 
-       <form>
+       <form  (ngSubmit)="onSubmit(f)" #f="ngForm" >
 	<svg class="Rectangle_8">
 		<rect fill="rgba(250,249,252,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_8" rx="0" ry="0" x="0" y="0" width="768" height="592">
 		</rect>
@@ -34,8 +34,18 @@
         </svg> 
         <div id="Email_address">
             <span > البريد الالكتروني  :  </span>
-                <input type="email" id="email"  value ="example@gmail.com" > 
-           </div>			
+                <input type="email" id="email" 
+                ngModel 
+                name="emaill"
+                required
+                #e="ngModel"
+                >          
+           </div>		
+           <div id ="Email_address">
+<span *ngIf="!e.valid && e.touched">
+إعادة إدخال البريد الالكتروني !!!
+</span>
+           </div>
 	<svg class="Rectangle_10">
 		<rect fill="rgba(254,246,246,0.329)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_10" rx="0" ry="0" x="0" y="0" width="587" height="78">
 		</rect>
@@ -48,8 +58,18 @@
     <span> كلمة السر  :  </span>
     <input type="password" 
     id = "password"
-    value=""
+    class="form-control"
+    ngModel
+    name="password"
+    required
+    #p="ngModel"
     >
+   </div>
+   <div id ="Password"> 
+<span *ngIf="!p.valid &&p.touched">
+  يجب تحديد كلمة السر 
+</span>
+
    </div>
 	<svg class="Rectangle_11Rectangle_11">
 		<rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_11" rx="0" ry="0" x="0" y="0" width="19" height="18">
