@@ -13,6 +13,7 @@ export class SingInComponent  {
 
   ngOnInit(): void {
   }
+  
   onSubmit(form :NgForm){
 console.log(form);
 }
