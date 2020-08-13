@@ -28,4 +28,5 @@ const app_router :Routes=[
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+}
