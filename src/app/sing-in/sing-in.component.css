@@ -15,8 +15,8 @@
 }
 #Sing_in {
     position: absolute;
-    width: 1920px;
-    height: 1080px;
+    width: 3000px;
+    height: 3315px;
     background-color: rgba(255,255,255,1);
     overflow: hidden;
     --web-view-name: Sing in;
@@ -270,14 +270,14 @@
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
     position: absolute;
     overflow: visible;
-    width:2000px;
+    width: 1938px;
     height: 128px;
-    left: 4px;
+    left: 0px;
     top: 0px;
 }
 #Back {
     position: absolute;
-    left: 1772px;
+    left: 2500px;
     top: 26px;
     overflow: visible;
     width: 79px;

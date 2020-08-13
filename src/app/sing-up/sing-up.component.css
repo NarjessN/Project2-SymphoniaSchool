@@ -15,7 +15,7 @@
 }
 #Sing_up {
     position: absolute;
-    width: 1920px;
+    width: 3000px;
     height: 3315px;
     background-color: rgba(255,255,255,1);
     overflow: hidden;
@@ -177,7 +177,7 @@
 }
 #Back {
     position: absolute;
-    left: 1772px;
+    left: 2500px;
     top: 26px;
     overflow: visible;
     width: 79px;
