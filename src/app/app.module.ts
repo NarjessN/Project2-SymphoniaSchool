@@ -4,26 +4,35 @@ import{Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { SingInComponent } from './sing-in/sing-in.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
-import { BasicInformationComponent } from './basic-information/basic-information.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SchoolComponent } from './school/school.component';
+import { IntroductionComponent } from './introduction/introduction.component';
+import { AboutComponent } from './school/about/about.component';
+
 
 const app_router :Routes=[
-{path:'' ,component: AppComponent},
+{path:'introduction' ,component: IntroductionComponent},
 {path: 'sing-in', component :SingInComponent},
-{path:'sing-up',component:SingUpComponent}
+{path:'sing-up',component:SingUpComponent},
+{path:'school',component:SchoolComponent},
 ];
 @NgModule({
   declarations: [
     AppComponent,
      SingUpComponent,
      SingInComponent,
-     BasicInformationComponent,
+     SchoolComponent,
+     IntroductionComponent,
+     AboutComponent,
+    
    
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(app_router),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

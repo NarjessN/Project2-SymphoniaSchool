@@ -1,0 +1,291 @@
+.mediaViewInfo {
+    --web-view-name: intro;
+    --web-view-id: intro;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+}
+:root {
+    --web-view-ids: intro;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+#intro {
+    position: absolute;
+    width: 3000px;
+    height: 1340px;
+    background-color: rgba(255,255,255,1);
+    overflow: hidden;
+    --web-view-name: intro;
+    --web-view-id: intro;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+}
+@keyframes fadein {
+
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
+.Rectangle_1 {
+    overflow: visible;
+    position:absolute;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 4315px;
+    height: 4315px;
+}
+#ID7 {
+    position: absolute;
+    width: 697.5px;
+    height: 706.5px;
+    left: 1164px;
+    top: 198px;
+    overflow: visible;
+}
+.Ellipse_3 {
+    width: 1639px;
+    height: 554px;
+    position: absolute;
+    overflow: visible;
+    transform: matrix(1,0,0,1,-943.7745,-600.3906) rotate(58deg);
+    transform-origin: center;
+}
+.Ellipse_2 {
+    overflow: visible;
+    position:absolute;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    transform: matrix(1,0,0,1,-1080,909) rotate(-22deg);
+    transform-origin: center;
+}
+.Ellipse_1 {
+    overflow: visible;
+    position:absolute;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 1999px;
+    transform: matrix(1,0,0,1,1423,1058) rotate(29deg);
+    transform-origin: center;
+}
+#Rectangle_5 {
+    opacity: 0.76;
+}
+
+.Rectangle_5 {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: absolute;
+    overflow: visible;
+    width: 1938px;
+    height: 128px;
+    top: 0px;
+}
+#Group_2 {
+    position: absolute;
+    width: 100px;
+    height: 42px;
+    left: 1428px;
+    top: 34px;
+    overflow: visible;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: Sing_in.html;
+    cursor: pointer;
+}
+.Rectangle_3 {
+    position: absolute;
+    overflow: visible;
+    width: 100px;
+    height: 42px;
+    left: 0px;
+    top: 0px;
+}
+#sing_in {
+    position: absolute;
+    left: 400px;
+    top: 6px;
+    overflow: visible;
+    width: 59px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(243,234,234,1);
+}
+#Group_1 {
+    position: absolute;
+    width: 100px;
+    height: 42px;
+    left: 1538px;
+    top: 34px;
+    overflow: visible;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: Sing_up.html;
+    cursor: pointer;
+}
+.Rectangle_4 {
+    position: absolute;
+    overflow: visible;
+    width: 100px;
+    height: 42px;
+    left: 0px;
+    top: 0px;
+}
+#sing_up {
+    position: absolute;
+    left: 500px;
+    top: 6px;
+    overflow: visible;
+    width: 66px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(243,234,234,1);
+}
+#Symphonia_School {
+    position: absolute;
+    left: 378px;
+    top: 41px;
+    overflow: visible;
+    width: 200px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Bauhaus 93;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: rgba(243,234,234,1);
+}
+#Path_1 {
+    opacity: 0.49;
+}
+.Path_1 {
+    overflow: visible;
+    position: absolute;
+    width: 923.921px;
+    height: 643.796px;
+    transform: matrix(1,0,0,1,189.7285,188.1932) rotate(-42deg);
+    transform-origin: center;
+    left: 0px;
+    top: 0px;
+}
+#Amazing_app_for {
+    position: absolute;
+    left: 285px;
+    top: 409px;
+    overflow: visible;
+    width: 725px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Bell MT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    color: rgba(243,234,234,1);
+}
+#lucky_school {
+    position: absolute;
+    left: 363px;
+    top: 510px;
+    overflow: visible;
+    width: 546px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Bell MT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    color: rgba(243,234,234,1);
+}
+#Group_3 {
+    position: absolute;
+    width: 499px;
+    height: 50px;
+    left: 403px;
+    top: 644px;
+    overflow: visible;
+}
+#Symphnia_School_App_for_help_y {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+    width: 500px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Bell MT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgba(243,234,234,1);
+}
+#for_your_School {
+    position: absolute;
+    left: 0px;
+    top: 28px;
+    overflow: visible;
+    width: 136px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Bell MT;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgba(243,234,234,1);
+}
+#Group_4 {
+    position: absolute;
+    width: 430px;
+    height: 118px;
+    left: 833px;
+    top: 787px;
+    overflow: visible;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: Sing_in.html;
+    cursor: pointer;
+}
+.Rectangle_6 {
+    position: absolute;
+    overflow: visible;
+    width: 430px;
+    height: 118px;
+    left: 0px;
+    top: 0px;
+}
+#Get_Start {
+    position: absolute;
+    left: 90px;
+    top: 23px;
+    overflow: visible;
+    width: 251px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    color: rgba(243,234,234,1);
+}
