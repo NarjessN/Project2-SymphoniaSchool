@@ -19,7 +19,14 @@ export class SchoolComponent implements OnInit {
 
 
 
+
+
   
+
+
+
+
+
 
 
 
