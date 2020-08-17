@@ -12,4 +12,25 @@ export class SchoolComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
