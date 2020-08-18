@@ -7,6 +7,7 @@
 :root {
     --web-view-ids: Home_Page;
 }
+
 * {
     margin: 0;
     padding: 0;
