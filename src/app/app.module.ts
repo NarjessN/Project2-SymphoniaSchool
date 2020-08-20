@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SchoolComponent } from './school/school.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { AboutComponent } from './school/about/about.component';
+import { SchoolPostsComponent } from './school/school-posts/school-posts.component';
 
 
 const app_router :Routes=[
@@ -25,6 +26,7 @@ const app_router :Routes=[
      SchoolComponent,
      IntroductionComponent,
      AboutComponent,
+     SchoolPostsComponent,
     
    
   ],
