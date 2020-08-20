@@ -13,7 +13,7 @@ import { SchoolPostsComponent } from './school/school-posts/school-posts.compone
 
 
 const app_router :Routes=[
-{path:'introduction' ,component: IntroductionComponent},
+{path:'' ,component: IntroductionComponent},
 {path: 'sing-in', component :SingInComponent},
 {path:'sing-up',component:SingUpComponent},
 {path:'school',component:SchoolComponent},
