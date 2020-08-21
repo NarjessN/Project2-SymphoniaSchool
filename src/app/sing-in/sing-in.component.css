@@ -1,0 +1,309 @@
+.mediaViewInfo {
+    --web-view-name: Sing in;
+    --web-view-id: Sing_in;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+}
+:root {
+    --web-view-ids: Sing_in;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+#Sing_in {
+    position: absolute;
+    width: 3000px;
+    height: 3315px;
+    background-color: rgba(255,255,255,1);
+    overflow: hidden;
+    --web-view-name: Sing in;
+    --web-view-id: Sing_in;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+}
+@keyframes fadein {
+
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
+#ID9 {
+    position: absolute;
+    width: 1017px;
+    height: 698px;
+    left: 28px;
+    top: 326px;
+    overflow: visible;
+}
+#Rectangle_8 {
+    opacity: 0.81;
+}
+.Rectangle_8 {
+    filter: drop-shadow(20px 20px 20px rgba(9, 9, 9, 0.161));
+    position: absolute;
+    overflow: visible;
+    width: 828px;
+    height: 652px;
+    left: 1082px;
+    top: 138px;
+}
+.Rectangle_9 {
+    position: absolute;
+    overflow: visible;
+    width: 587px;
+    height: 78px;
+    left: 1179px;
+    top: 248px;
+}
+.ic_local_post_office_24px {
+    overflow: visible;
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    left: 1198px;
+    top: 281px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Email_address {
+    position: absolute;
+    left: 1233px;
+    top: 276px;
+    overflow: visible;
+    width: 126px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(3,3,3,1);
+    
+}
+#email{
+    font-size: inherit;
+    size: 14520px;
+    width: 300px;
+    height: 50px;
+    left: 1179px;
+    background-color: rgba(254,246,246,0.329);
+    border-color:rgba(254,246,246,0.329); 
+
+}
+.Rectangle_10 {
+    position: absolute;
+    overflow: visible;
+    width: 587px;
+    height: 78px;
+    left: 1179px;
+    top: 366px;
+}
+.ic_lock_24px {
+    overflow: visible;
+    position: absolute;
+    width: 16px;
+    height: 21px;
+    left: 1200px;
+    top: 397px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Password {
+    position: absolute;
+    left: 1233px;
+    top: 392px;
+    overflow: visible;
+    width: 88px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(3,3,3,1);
+}
+.label{
+    float: left
+}
+#password{
+    size: 14520px;
+    width: 300px;
+    height: 50px;
+    left: 1179px;
+    background-color: rgba(254,246,246,0.329);
+    border-color:rgba(254,246,246,0.329); 	
+}
+.Rectangle_11 {
+    position: absolute;
+    overflow: visible;
+    width: 19px;
+    height: 18px;
+    left: 1179px;
+    top: 464px;
+}
+#Keep_me_logged_in {
+    position: absolute;
+    left: 1208px;
+    top: 459px;
+    overflow: visible;
+    width: 167px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(172,164,164,1);
+}
+#Forget_your_Password_ {
+    position: absolute;
+    left: 1570px;
+    top: 457px;
+    overflow: visible;
+    width: 206px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(67,67,67,1);
+}
+.Line_1 {
+    overflow: visible;
+    position: absolute;
+    width: 196px;
+    height: 1px;
+    left: 1570.5px;
+    top: 483.5px;
+    transform: matrix(1,0,0,1,0,0);
+}
+.Rectangle_12 {
+    position: absolute;
+    overflow: visible;
+    width: 588px;
+    height: 69px;
+    left: 1178px;
+    top: 569px;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: Home_Page.html;
+    cursor: pointer;
+}
+#Sing_in_b {
+    position: absolute;
+    left: 1426px;
+    top: 587px;
+    overflow: visible;
+    width: 93px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Britannic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(255,241,241,1);
+}
+#Group_5 {
+    position: absolute;
+    width: 351px;
+    height: 112px;
+    left: 336px;
+    top: 138px;
+    overflow: visible;
+}
+#Sing_in_ca {
+    position: absolute;
+    left: 90px;
+    top: 0px;
+    overflow: visible;
+    width: 155px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Britannic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    color: rgba(0,0,0,1);
+}
+#for_be_one_of_us {
+    position: absolute;
+    left: 0px;
+    top: 56px;
+    overflow: visible;
+    width: 352px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Britannic;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    color: rgba(0,0,0,1);
+}
+#I_don_t_have_Account {
+    position: absolute;
+    left: 1179px;
+    top: 679px;
+    overflow: visible;
+    width: 171px;
+    white-space: nowrap;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: Sing_up.html;
+    cursor: pointer;
+    text-align: left;
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgba(92,107,165,1);
+}
+#Rectangle_5 {
+    opacity: 0.76;
+}
+.Rectangle_5 {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    position: absolute;
+    overflow: visible;
+    width: 1938px;
+    height: 128px;
+    left: 0px;
+    top: 0px;
+}
+#Back {
+    position: absolute;
+    left: 2500px;
+    top: 26px;
+    overflow: visible;
+    width: 79px;
+    white-space: nowrap;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: intro.html;
+    cursor: pointer;
+    text-align: left;
+    font-family: Calibri;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgba(92,107,165,1);
+}
+#Symphonia_School {
+    position: absolute;
+    left: 378px;
+    top: 41px;
+    overflow: visible;
+    width: 200px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Bauhaus 93;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: rgba(243,234,234,1);
+}
