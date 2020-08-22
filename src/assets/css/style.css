@@ -32,7 +32,7 @@ body {
   background: #ebeff2;
   font-family: "Roboto", sans-serif;
   margin: 0;
-  padding-bottom: 60px;
+ /* padding-bottom: 60px;*/
   overflow-x: hidden;
   font-size: 14px;
 }
@@ -98,6 +98,9 @@ p {
 
 b {
   font-weight: 600;
+}
+input { 
+  text-align: right; 
 }
 
 a:hover {
@@ -994,7 +997,7 @@ select[multiple] {
   font-size: 18px;
   background-color: #36404a;
   color: #ffffff;
-  text-align: left;
+  text-align: right;
   margin: 0px;
 }
 
@@ -2406,8 +2409,7 @@ table.dataTable tbody > tr.selected, table.dataTable tbody > tr > .selected {
   max-width: 600px;
   padding: 0;
   position: relative;
-  text-align: left;
-}
+  text-align: right;}
 
 /* editable table */
 #datatable-editable .actions a {
@@ -5693,8 +5695,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
     padding: 15px 0;
     list-style: none;
     min-width: 200px;
-    text-align: left;
-    visibility: hidden;
+    text-align: right;    visibility: hidden;
     opacity: 0;
     margin-top: 10px;
     -webkit-transition: all .2s ease;
@@ -5909,7 +5910,7 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 .footer {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   bottom: 0;
-  text-align: left !important;
+  text-align: right !important;
   padding: 20px 0;
   position: absolute;
   right: 0;
@@ -6249,7 +6250,7 @@ File: Responsive
   }
   .dataTables_wrapper .col-xs-6 {
     width: 100%;
-    text-align: left;
+    text-align: right;
   }
   div#datatable-buttons_info {
     float: none;
