@@ -15,11 +15,11 @@
     border: none;
 }
 #Home_Page {
-    position: fixed;
+    position: relative;
     width: 2700px;
     height: 1250px;
     background-color: rgba(255,255,255,1);
-    overflow: hidden;
+    overflow: visible;
     --web-view-name: Home Page;
     --web-view-id: Home_Page;
     --web-scale-on-resize: true;
@@ -47,7 +47,18 @@
     height: 128px;
     top: 0px;
 }
-
+#Rectangle_554 {
+    opacity: 0.96;
+}
+.Rectangle_554 {
+    filter: drop-shadow(5px 3px 6px rgba(0, 0, 0, 0.161));
+    position: absolute;
+    overflow: visible;
+     width: 1050px;
+    height: 161px;
+    left: 888px;
+    top: 110px;
+}
 #Job_Post_List {
     position: absolute;
     left: 1243px;
@@ -62,12 +73,62 @@
     font-size: 55px;
     color: rgba(255,255,255,1);
 }
-
-
-
-
-
-
+.Rectangle_557 {
+    position: absolute;
+    overflow: visible;
+    width: 30px;
+    height: 919px;
+    left: 1890px;
+    top: 270px;
+}
+.Rectangle_558 {
+    position: absolute;
+    overflow: visible;
+    width: 30px;
+    height: 701px;
+    left: 1890px;
+    top: 253px;
+}
+#Rectangle_559 {
+    opacity: 0.92;
+}
+.Rectangle_559 {
+    scroll-behavior: smooth;
+    position: absolute;
+    overflow: visible;
+    width: 1002px;
+    height: 946px;
+    left: 888px;
+    top: 253px;
+}
+#Repeat_Grid_3 {
+   
+    position: absolute;
+    width: 5000px;
+    height: 1020px;
+    left: 888px;
+    top: 253px;
+    overflow: hidden;
+}
+#Repeat_Grid_3_0 {
+    position: absolute;
+    width: 1002px;
+    height: 239px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#Rectangle_560 {
+    opacity: 0.96;
+}
+.Rectangle_560 {
+    position: absolute;
+    overflow: visible;
+    width: 1002px;
+    height: 239px;
+    left: 0px;
+    top: 0px;
+}
 #Repeat_Grid_2 {
     position: absolute;
     width: 961px;
@@ -1257,8 +1318,26 @@
     font-size: 30px;
     color: rgba(14,14,15,1);
 }
-
-
+#Group_75 {
+    position: absolute;
+    width: 510px;
+    height: 733px;
+    left: 347px;
+    top: 191px;
+    overflow: visible;
+}
+#Group_15 {
+    position: absolute;
+    width: 432px;
+    height: 432px;
+    left: 39px;
+    top: 203px;
+    overflow: visible;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: Creating_Post_Page.html;
+    cursor: pointer;
+}
 .Ellipse_5 {
     position: absolute;
     overflow: visible;
@@ -1267,7 +1346,119 @@
     left: 0px;
     top: 0px;
 }
-
+#Group_14 {
+    position: absolute;
+    width: 247px;
+    height: 247px;
+    left: 93px;
+    top: 93px;
+    overflow: visible;
+}
+.Ellipse_7 {
+    position: absolute;
+    overflow: visible;
+    width: 247px;
+    height: 247px;
+    left: 0px;
+    top: 0px;
+}
+.Ellipse_6 {
+    position: absolute;
+    overflow: visible;
+    width: 175px;
+    height: 175px;
+    left: 36px;
+    top: 36px;
+}
+.Union_1 {
+    overflow: visible;
+    position: absolute;
+    width: 113px;
+    height: 113px;
+    left: 160px;
+    top: 160px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Create_New_Job_Post {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+    width: 511px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Book Antiqua;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    color: rgba(14,14,15,1);
+}
+#hand_finger_click {
+    position: absolute;
+    width: 123px;
+    height: 123px;
+    left: 193.688px;
+    top: 77.426px;
+    overflow: visible;
+}
+#Group_19 {
+    position: absolute;
+    width: 292px;
+    height: 81px;
+    left: 109px;
+    top: 652px;
+    overflow: visible;
+}
+#create_your_post_help_you_to_f {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+    width: 290px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(67,61,61,1);
+}
+#good_employee_under_your_offer {
+    position: absolute;
+    left: 3px;
+    top: 27px;
+    overflow: visible;
+    width: 290px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(67,61,61,1);
+}
+#Group_18 {
+    position: absolute;
+    width: 229px;
+    height: 27px;
+    left: 36px;
+    top: 54px;
+    overflow: visible;
+}
+#in_the_Symphnia_platform_ {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+    width: 230px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(67,61,61,1);
+}
 .Rectangle_34 {
     position: absolute;
     overflow: visible;
