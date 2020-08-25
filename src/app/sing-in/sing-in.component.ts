@@ -23,11 +23,12 @@ export class SingInComponent  {
   }
  
   onSubmit(form :NgForm){
+    console.log(form);
   temp : JSON;
     const temp=form.value;
    // console.log( temp);
- this.http.post('http://authentication-2c48e.firebaseapp.com',temp).subscribe(
-   responseData =>{console.log(responseData)});
+ //this.http.post('http://authentication-2c48e.firebaseapp.com',temp).subscribe(
+   //responseData =>{console.log(responseData)});
 
     
 }
