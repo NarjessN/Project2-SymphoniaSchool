@@ -5,7 +5,11 @@
   "projects": {
     "symphoniaschoole": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,9 +28,27 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/assets/css/icons.css",
+              "src/assets/css/style.css"
+              
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/modernizr.min.js",
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/waves.js",
+              "src/assets/js/jquery.slimscroll.js",
+              "src/assets/js/jquery.core.js",
+              "src/assets/js/jquery.app.js"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/scss/_menu.scss"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -120,6 +142,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "symphoniaschoole"
 }

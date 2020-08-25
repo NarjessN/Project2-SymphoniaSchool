@@ -11,6 +11,7 @@ import { IntroductionComponent } from './introduction/introduction.component';
 import { AboutComponent } from './school/about/about.component';
 import { SchoolPostsComponent } from './school/school-posts/school-posts.component';
 import { CreatePostComponent } from './school/school-posts/create-post/create-post.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const app_router :Routes=[
@@ -37,7 +38,8 @@ const app_router :Routes=[
     BrowserModule,
     RouterModule.forRoot(app_router),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
