@@ -145,7 +145,7 @@
                                          class="form-control"
                                          id="inputEmail3" placeholder="البريد اللكتروني "
                                         ngModel 
-                                        name="e"
+                                        name="email"
                                         #email="ngModel"
                                         >
                                     
@@ -218,19 +218,30 @@
                                         <div class="checkbox checkbox-pink">
                                             <input id="checkbox1" type="checkbox"
                                                    data-parsley-multiple="groups"
-                                                   data-parsley-mincheck="2">
+                                                   data-parsley-mincheck="2"
+                                                   ngModel
+                                                   name="maleschooltype"
+                                                   #firstschooltype ="ngModel"
+                                                   >
                                             <label for="checkbox1"> ذكور </label>
                                         </div>
                                         <div class="checkbox checkbox-pink">
                                             <input id="checkbox2" type="checkbox"
                                                    data-parsley-multiple="groups"
-                                                   data-parsley-mincheck="2">
+                                                   data-parsley-mincheck="2"
+                                                   ngModel
+                                                   name="femalschooltype"
+                                                   #secondeschooltype ="ngModel">
                                             <label for="checkbox2"> إناث  </label>
                                         </div>
                                         <div class="checkbox checkbox-pink">
                                             <input id="checkbox3" type="checkbox"
                                                    data-parsley-multiple="groups"
-                                                   data-parsley-mincheck="2" required>
+                                                   data-parsley-mincheck="2" required
+                                                   ngModel
+                                                   name="both"
+                                                   #thirdschooltype ="ngModel"
+                                                   >
                                             <label for="checkbox3"> مختلطة </label>
                                         </div>
                                     </div>
@@ -240,36 +251,60 @@
                                     <div class="col-sm-6">
                                         <div class="checkbox checkbox-pink">
                                             <input id="checkbox4" type="checkbox"
-                                                   data-parsley-multiple="group1">
+                                                   data-parsley-multiple="group1"
+                                                   ngModel
+                                                   name="fschoolstudy"
+                                                   #friststudytype ="ngModel"
+                                                   >
                                             <label for="checkbox4"> ابتدائي  </label>
                                         </div>
                                         <div class="checkbox checkbox-pink">
                                             <input id="checkbox5" type="checkbox"
-                                                   data-parsley-multiple="group1">
+                                                   data-parsley-multiple="group1"
+                                                   ngModel
+                                                   name="s-schoolstudy"
+                                                   #secondestudytype ="ngModel"
+                                                   >
                                             <label for="checkbox5"> إعدادي </label>
                                         </div>
                                         <div class="checkbox checkbox-pink">
                                             <input id="checkbox6" type="checkbox"
                                                    data-parsley-multiple="group1"
-                                                   data-parsley-maxcheck="1">
+                                                   data-parsley-maxcheck="1"
+                                                   ngModel
+                                                   name="l-3-schoolstudy"
+                                                   #thirdstudytype ="ngModel"
+                                                   >
                                             <label for="checkbox6"> ثانوي - أدبي  </label>
                                         </div>
                                         <div class="checkbox checkbox-pink">
                                                 <input id="checkbox7" type="checkbox"
                                                        data-parsley-multiple="group1"
-                                                       data-parsley-maxcheck="1">
+                                                       data-parsley-maxcheck="1"
+                                                       ngModel
+                                                       name="s-3-schoolstudy"
+                                                       #fourthstudytype="ngModel"
+                                                       >
                                                 <label for="checkbox7"> ثانوي - علمي   </label>
                                             </div>
                                             <div class="checkbox checkbox-pink">
                                                     <input id="checkbox8" type="checkbox"
                                                            data-parsley-multiple="group1"
-                                                           data-parsley-maxcheck="1">
+                                                           data-parsley-maxcheck="1"
+                                                           ngModel
+                                                           name="both-s-l-3-schoolstudy"
+                                                           #fifthstudytype="ngModel"
+                                                           >
                                                     <label for="checkbox8"> ثانوي - أدبي و علمي  </label>
                                                 </div>
                                                 <div class="checkbox checkbox-pink">
                                                         <input id="checkbox9" type="checkbox"
                                                                data-parsley-multiple="group1"
-                                                               data-parsley-maxcheck="1">
+                                                               data-parsley-maxcheck="1"
+                                                               ngModel
+                                                               name="all"
+                                                               #sixstudytype="ngModel"
+                                                               >
                                                         <label for="checkbox9"> كافة المراحل    </label>
                                                     </div>
                                     </div>
@@ -319,7 +354,9 @@
                                     </div>
                                 <div class="form-group row m-b-0">
                                     <div class="offset-sm-3 col-sm-9 m-t-15">
-                                        <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                        <button type="submit" class="btn btn-primary waves-effect waves-light"
+                                        [disabled]="!f.valid"
+                                        >
                                            إنشاء حساب جديد 
                                         </button>
                                         <button type="reset" class="btn btn-secondary waves-effect m-l-5">
