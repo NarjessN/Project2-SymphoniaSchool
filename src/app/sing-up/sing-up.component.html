@@ -101,7 +101,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                        
-                        <h4 class="page-title">Form Validation</h4>
+                        <h5 class="page-title">إنشاء حساب جديد !! </h5>
                     </div>
                 </div>
                 <!-- end page title end breadcrumb -->
@@ -130,27 +130,30 @@
 
                             
 
-                            <form class="form-horizontal" role="form"
+                            <form
+                            (ngSubmit)="onSubmite(f)" #f="ngForm"
+                             class="form-horizontal" role="form"
                              data-parsley-validate novalidate>
                                 <div class="form-group row">
                                     <label
                                      for="inputEmail3"
                                       class="col-sm-4 col-form-label"
                                      
-                                      >بريد الالكتروني *</label>
+                                      >بريد الالكتروني : </label>
                                     <div class="col-sm-7">
                                         <input type="email" required parsley-type="email"
                                          class="form-control"
                                          id="inputEmail3" placeholder="البريد اللكتروني "
                                         ngModel 
                                         name="e"
+                                        #email="ngModel"
                                         >
                                     
                                     </div>
-                                  
+                                 <span    *ngIf="!email.valid && email.touched" class ="help-block"> يرجى إدخال البريد الالكتروني</span> 
                                 </div>
                                 <div class="form-group row">
-                                    <label for="hori-pass1" class="col-sm-4 col-form-label">كلمة المرور *</label>
+                                    <label for="hori-pass1" class="col-sm-4 col-form-label">كلمة المرور : </label>
                                     <div class="col-sm-7">
                                         <input id="hori-pass1" type="password" 
                                         placeholder="كلمة المرور " 
@@ -158,12 +161,14 @@
                                     class="form-control"
                                     ngModel
                                     name ="password"
+                                    #password ="ngModel"
                                     >
                                     </div>
+                                    <span *ngIf="!password.valid && password.touched"  class ="help-block"> يرجى إدخال كلمة السر  </span>
                                 </div>
                                 <div class="form-group row">
                                     <label for="hori-pass2" class="col-sm-4 col-form-label">التأكيد على كلمة المرور 
-                                        *</label>
+                                        :  </label>
                                     <div class="col-sm-7">
                                         <input data-parsley-equalto="#hori-pass1" type="password" required
                                                placeholder="التأكيد على كلمة المرور " 
@@ -171,194 +176,164 @@
                                                 id="hori-pass2"
                                                 ngModel 
                                                 name="confirmpassword"
+                                                #cp="ngModel"
                                                 >
                                     </div>
+                                    <span   *ngIf="(cp.value != password.value )  && cp.touched && password.valid && cp.valid" class ="help-block">
+                                   <h4>كلمة المرور ليست نفسها </h4>    
+                                                    </span>
+                                                    <span *ngIf="!cp.valid && cp.touched" class ="help-block">
+                                                        <h5>يرجى التاأكيد على كلمة المرور  </h5>    
+                                                                         </span>
+                                     <span *ngIf="(cp.value === password.value )  && cp.touched && password.valid && cp.valid" class ="help-block"><h3>كلمة المرور متطابقة </h3>  </span>
                                 </div>
 
                                
                                 <div class="form-group">
                                     <div class="offset-sm-4 col-sm-8">
-                                        <div class="checkbox">
-                                            <input id="remember-2" type="checkbox">
-                                            <label for="remember-2"> لدي حساب مسبقا  </label>
+                                        <!--routerLink ="/sing-up"-->
+                                        <a routerLink ="/sing-in"> لدي حساب مسبقا</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <h5 class="m-b-5"><b>معلومات حساب المدرسة </b></h5>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">   اسم المدرسة : </label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" required
+                                               placeholder="اسم المدرسة "
+                                               ngModel
+                                               name="schoolname"
+                                               #schoolname ="ngModel"
+                                               />
+                                    </div>
+                                    <span *ngIf="!schoolname.valid && schoolname.touched" > يرجى إدخال اسم المدرسة </span>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">نوع المدرسة : </label>
+                                    <div class="col-sm-6">
+                                        <div class="checkbox checkbox-pink">
+                                            <input id="checkbox1" type="checkbox"
+                                                   data-parsley-multiple="groups"
+                                                   data-parsley-mincheck="2">
+                                            <label for="checkbox1"> ذكور </label>
+                                        </div>
+                                        <div class="checkbox checkbox-pink">
+                                            <input id="checkbox2" type="checkbox"
+                                                   data-parsley-multiple="groups"
+                                                   data-parsley-mincheck="2">
+                                            <label for="checkbox2"> إناث  </label>
+                                        </div>
+                                        <div class="checkbox checkbox-pink">
+                                            <input id="checkbox3" type="checkbox"
+                                                   data-parsley-multiple="groups"
+                                                   data-parsley-mincheck="2" required>
+                                            <label for="checkbox3"> مختلطة </label>
                                         </div>
                                     </div>
                                 </div>
-                              
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">المرحلة التعليمة : </label>
+                                    <div class="col-sm-6">
+                                        <div class="checkbox checkbox-pink">
+                                            <input id="checkbox4" type="checkbox"
+                                                   data-parsley-multiple="group1">
+                                            <label for="checkbox4"> ابتدائي  </label>
+                                        </div>
+                                        <div class="checkbox checkbox-pink">
+                                            <input id="checkbox5" type="checkbox"
+                                                   data-parsley-multiple="group1">
+                                            <label for="checkbox5"> إعدادي </label>
+                                        </div>
+                                        <div class="checkbox checkbox-pink">
+                                            <input id="checkbox6" type="checkbox"
+                                                   data-parsley-multiple="group1"
+                                                   data-parsley-maxcheck="1">
+                                            <label for="checkbox6"> ثانوي - أدبي  </label>
+                                        </div>
+                                        <div class="checkbox checkbox-pink">
+                                                <input id="checkbox7" type="checkbox"
+                                                       data-parsley-multiple="group1"
+                                                       data-parsley-maxcheck="1">
+                                                <label for="checkbox7"> ثانوي - علمي   </label>
+                                            </div>
+                                            <div class="checkbox checkbox-pink">
+                                                    <input id="checkbox8" type="checkbox"
+                                                           data-parsley-multiple="group1"
+                                                           data-parsley-maxcheck="1">
+                                                    <label for="checkbox8"> ثانوي - أدبي و علمي  </label>
+                                                </div>
+                                                <div class="checkbox checkbox-pink">
+                                                        <input id="checkbox9" type="checkbox"
+                                                               data-parsley-multiple="group1"
+                                                               data-parsley-maxcheck="1">
+                                                        <label for="checkbox9"> كافة المراحل    </label>
+                                                    </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+        
+                                    <div class="col-xl-6" >
+                                        <h5 class="m-b-5"><b>معلومات حساب المدرسة </b></h5>
+                                        </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">رقم الهاتف : </label>
+                                    <div class="col-sm-6">
+                                        <input type="text " class="form-control" required
+                                               data-parsley-minlength="6" placeholder="011..."
+                                               ngModel 
+                                               name =" schooltelephone"
+                                               #telephonenumber="ngModel"
+
+                                               />
+                                    </div>
+                                    <span *ngIf="!telephonenumber.valid && telephonenumber.touched  "> يرجى إخال رقم الهاتف </span>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">رقم الهاتف : </label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" required
+                                               data-parsley-maxlength="6" placeholder="011...."
+                                               ngModel
+                                               name="schooltelephone2"
+                                               #schoolnumber2="ngModel"
+                                               />
+                                    </div>
+                                    <span *ngIf="!schoolnumber2.valid &&schoolnumber2.touched"> يرجىى إخال رقم الهاتف </span>
+                                </div>
+                                <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">عنوان المدرسة : </label>
+                                        <div class="col-sm-6">
+                                            <textarea required class="form-control"
+                                            placeholder="عنوان المدرسة "
+                                            ngModel
+                                            name="schooladdress"
+                                            #schooladdress="ngModel"
+                                            ></textarea>
+                                        </div>
+                                        <span *ngIf=" !schooladdress.valid &&  schooladdress.touched"> يرجى إخال عنوان المدرسة </span>
+                                    </div>
+                                <div class="form-group row m-b-0">
+                                    <div class="offset-sm-3 col-sm-9 m-t-15">
+                                        <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                           إنشاء حساب جديد 
+                                        </button>
+                                        <button type="reset" class="btn btn-secondary waves-effect m-l-5">
+                                            إلغاء !
+                                        </button>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div><!-- end col -->
                 </div>
                 <!-- end row -->
 
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card-box">
-                            <div class="dropdown pull-right">
-                                <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="mdi mdi-dots-vertical"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
-                                </div>
-                            </div>
-
-                           
-
-                            <div class="row">
-                              
-                                <div class="col-xl-6">
-                                    <h5 class="m-b-5"><b>معلومات حساب المدرسة </b></h5>
-                                  
-
-                                    <form class="form-horizontal group-border-dashed" action="#">
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">   اسم المدرسة : </label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control" required
-                                                       placeholder="اسم المدرسة "
-                                                       ngModel
-                                                       name="schoolname"
-                                                       />
-                                            </div>
-                                        </div>
-
-
-                    
-
-                                      
-                                   <!--   <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Textarea</label>
-                                            <div class="col-sm-6">
-                                                <textarea required class="form-control"></textarea>
-                                            </div>
-                                        </div>-->
-                                     
-                                        <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">نوع المدرسة : </label>
-                                                <div class="col-sm-6">
-                                                    <div class="checkbox checkbox-pink">
-                                                        <input id="checkbox1" type="checkbox"
-                                                               data-parsley-multiple="groups"
-                                                               data-parsley-mincheck="2">
-                                                        <label for="checkbox1"> ذكور </label>
-                                                    </div>
-                                                    <div class="checkbox checkbox-pink">
-                                                        <input id="checkbox2" type="checkbox"
-                                                               data-parsley-multiple="groups"
-                                                               data-parsley-mincheck="2">
-                                                        <label for="checkbox2"> إناث  </label>
-                                                    </div>
-                                                    <div class="checkbox checkbox-pink">
-                                                        <input id="checkbox3" type="checkbox"
-                                                               data-parsley-multiple="groups"
-                                                               data-parsley-mincheck="2" required>
-                                                        <label for="checkbox3"> مختلطة </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">المرحلة التعليمة : </label>
-                                                <div class="col-sm-6">
-                                                    <div class="checkbox checkbox-pink">
-                                                        <input id="checkbox4" type="checkbox"
-                                                               data-parsley-multiple="group1">
-                                                        <label for="checkbox4"> ابتدائي  </label>
-                                                    </div>
-                                                    <div class="checkbox checkbox-pink">
-                                                        <input id="checkbox5" type="checkbox"
-                                                               data-parsley-multiple="group1">
-                                                        <label for="checkbox5"> إعدادي </label>
-                                                    </div>
-                                                    <div class="checkbox checkbox-pink">
-                                                        <input id="checkbox6" type="checkbox"
-                                                               data-parsley-multiple="group1"
-                                                               data-parsley-maxcheck="1">
-                                                        <label for="checkbox6"> ثانوي - أدبي  </label>
-                                                    </div>
-                                                    <div class="checkbox checkbox-pink">
-                                                            <input id="checkbox7" type="checkbox"
-                                                                   data-parsley-multiple="group1"
-                                                                   data-parsley-maxcheck="1">
-                                                            <label for="checkbox7"> ثانوي - علمي   </label>
-                                                        </div>
-                                                        <div class="checkbox checkbox-pink">
-                                                                <input id="checkbox8" type="checkbox"
-                                                                       data-parsley-multiple="group1"
-                                                                       data-parsley-maxcheck="1">
-                                                                <label for="checkbox8"> ثانوي - أدبي و علمي  </label>
-                                                            </div>
-                                                            <div class="checkbox checkbox-pink">
-                                                                    <input id="checkbox9" type="checkbox"
-                                                                           data-parsley-multiple="group1"
-                                                                           data-parsley-maxcheck="1">
-                                                                    <label for="checkbox9"> كافة المراحل    </label>
-                                                                </div>
-                                                </div>
-                                            </div>
-                                        
-                                    </form>
-                                </div><!-- end col -->
-
-                                <div class="col-xl-6">
-                                    <h5 class="m-b-5"><b>معلومات التواصل عن المدرسة</b></h5>
-                       
-
-                                    <form class="form-horizontal group-border-dashed" action="#">
-
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">رقم الهاتف : </label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control" required
-                                                       data-parsley-minlength="6" placeholder="011..."
-                                                       ngModel 
-                                                       name =" schooltelephone"
-                                                       />
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">رقم الهاتف : </label>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control" required
-                                                       data-parsley-maxlength="6" placeholder="011...."
-                                                       ngModel
-                                                       name="schooltelephone2"
-                                                       />
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                                <label class="col-sm-3 col-form-label">عنوان المدرسة : </label>
-                                                <div class="col-sm-6">
-                                                    <textarea required class="form-control"
-                                                    placeholder="عنوان المدرسة "
-                                                    ngModel
-                                                    name="schooladdress"
-                                                    ></textarea>
-                                                </div>
-                                            </div>
-                                        <div class="form-group row m-b-0">
-                                            <div class="offset-sm-3 col-sm-9 m-t-15">
-                                                <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                                   إنشاء حساب جديد 
-                                                </button>
-                                                <button type="reset" class="btn btn-secondary waves-effect m-l-5">
-                                                    إلغاء !
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div><!-- end col -->
-                            </div><!-- end row -->
-                        </div>
-                    </div><!-- end col -->
-                </div>
+                
                 <!-- end row -->
 
 
