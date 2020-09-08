@@ -14,7 +14,7 @@
     <div class="clearfix"></div>
     <div class="wrapper-page">
       <div class="text-center">
-        <a href="index.html" class="logo"><span>سينفونيا</span></a>
+        <a routerLink ="/" class="logo"><span>سينفونيا</span></a>
         <h5 class="text-muted mt-0 font-600">دليل المدارس و المعلمين</h5>
       </div>
       <div class="m-t-40 card-box">
@@ -67,6 +67,7 @@
                       <div class="col-xs-12">
                         <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light"
                          type="submit"
+                         routerLink ="/school"
                          [disabled]="!f.valid"
                          >Log In</button>
                       </div>

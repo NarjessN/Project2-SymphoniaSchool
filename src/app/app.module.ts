@@ -12,6 +12,7 @@ import { AboutComponent } from './school/about/about.component';
 import { SchoolPostsComponent } from './school/school-posts/school-posts.component';
 import { CreatePostComponent } from './school/school-posts/create-post/create-post.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SchoolProfileComponent } from './school/school-profile/school-profile.component';
 
 
 const app_router :Routes=[
@@ -19,7 +20,9 @@ const app_router :Routes=[
 {path: 'sing-in', component :SingInComponent},
 {path:'sing-up',component:SingUpComponent},
 {path:'school',component:SchoolComponent},
-{path:'school/schoolposts' ,component: SchoolPostsComponent}
+{path:'school/schoolposts' ,component: SchoolPostsComponent},
+{path:'school/about' ,component: AboutComponent},
+{path:'school/schoolprofile',component: SchoolProfileComponent}
 ];
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ const app_router :Routes=[
      AboutComponent,
      SchoolPostsComponent,
      CreatePostComponent,
+     SchoolProfileComponent,
     
    
   ],

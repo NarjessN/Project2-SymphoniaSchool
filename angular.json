@@ -31,9 +31,11 @@
               "src/assets/css/bootstrap.min.css",
               "src/styles.css",
               "src/assets/css/icons.css",
-              "src/assets/css/style.css"
+              "src/assets/css/style.css",
+              "src/assets/plugins/morris/morris.css"
               
             ],
+         
             "scripts": [
         
               "src/assets/js/modernizr.min.js",
@@ -43,8 +45,13 @@
               "src/assets/js/waves.js",
               "src/assets/js/jquery.slimscroll.js",
               "src/assets/js/jquery.core.js",
-              "src/assets/js/jquery.app.js"
+              "src/assets/js/jquery.app.js",
+              "src/assets/plugins/jquery-knob/jquery.knob.js",
+              "src/assets/plugins/raphael/raphael-min.js",
+              "src/assets/pages/jquery.dashboard.js"
+
             ],
+           
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/assets/scss/_menu.scss"
