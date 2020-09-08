@@ -132,8 +132,10 @@
 
                             <form
                             (ngSubmit)="onSubmite(f)" #f="ngForm"
+                          
                              class="form-horizontal" role="form"
                              data-parsley-validate novalidate>
+                             
                                 <div class="form-group row">
                                     <label
                                      for="inputEmail3"
@@ -147,10 +149,18 @@
                                         ngModel 
                                         name="email"
                                         #email="ngModel"
+                                      
                                         >
+                                        
+                                        </div>
+                                      
+                                  
+                                 <span    *ngIf="!email.valid && email.touched" class ="help-block"> يرجى إدخال البريد الالكتروني
+                               
+                                 </span> 
+                                 <span    *ngIf="email.valid && email.touched" class ="help-block"> يرجى إدخال البريد الالكتروني
                                     
-                                    </div>
-                                 <span    *ngIf="!email.valid && email.touched" class ="help-block"> يرجى إدخال البريد الالكتروني</span> 
+                                     </span> 
                                 </div>
                                 <div class="form-group row">
                                     <label for="hori-pass1" class="col-sm-4 col-form-label">كلمة المرور : </label>
@@ -164,7 +174,13 @@
                                     #password ="ngModel"
                                     >
                                     </div>
-                                    <span *ngIf="!password.valid && password.touched"  class ="help-block"> يرجى إدخال كلمة السر  </span>
+                                    <span *ngIf="!password.valid && password.touched" 
+                                     class ="help-block"> يرجى إدخال كلمة السر 
+                                   
+                                    </span>
+                                    <span *ngIf="password.valid && password.touched" 
+                                    class ="help-block"> 
+                                   </span>
                                 </div>
                                 <div class="form-group row">
                                     <label for="hori-pass2" class="col-sm-4 col-form-label">التأكيد على كلمة المرور 
@@ -180,12 +196,21 @@
                                                 >
                                     </div>
                                     <span   *ngIf="(cp.value != password.value )  && cp.touched && password.valid && cp.valid" class ="help-block">
-                                   <h4>كلمة المرور ليست نفسها </h4>    
+                                   <h4>كلمة المرور ليست نفسها
+                                         
+                                </h4>    
                                                     </span>
                                                     <span *ngIf="!cp.valid && cp.touched" class ="help-block">
-                                                        <h5>يرجى التاأكيد على كلمة المرور  </h5>    
+                                                        <h5>
+                                                                
+                                                            يرجى التاأكيد على كلمة المرور  </h5>    
                                                                          </span>
-                                     <span *ngIf="(cp.value === password.value )  && cp.touched && password.valid && cp.valid" class ="help-block"><h3>كلمة المرور متطابقة </h3>  </span>
+                                     <span *ngIf="(cp.value === password.value )  && cp.touched && password.valid && cp.valid" class ="help-block"><h3>كلمة المرور متطابقة
+                                                
+                                    </h3>  </span>
+                                    <span *ngIf="(cp.value === password.value )  && cp.touched && password.valid && cp.valid" class ="help-block"><h3>
+                                                 
+                                    </h3>  </span>
                                 </div>
 
                                
@@ -210,40 +235,69 @@
                                                #schoolname ="ngModel"
                                                />
                                     </div>
-                                    <span *ngIf="!schoolname.valid && schoolname.touched" > يرجى إدخال اسم المدرسة </span>
+                                    <span *ngIf="!schoolname.valid && schoolname.touched" > يرجى إدخال اسم المدرسة
+                                              
+                                    </span>
+                                    <span *ngIf="schoolname.valid && schoolname.touched" >  
+                                               
+                                    </span>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">نوع المدرسة : </label>
                                     <div class="col-sm-6">
-                                        <div class="checkbox checkbox-pink">
+                               
+                            <!-- <div class="checkbox checkbox-pink">
                                             <input id="checkbox1" type="checkbox"
-                                                   data-parsley-multiple="groups"
+                                            checked aria-label="Single checkbox Two"                                   
+                                             data-parsley-multiple="groups"
                                                    data-parsley-mincheck="2"
                                                    ngModel
+                                                   
                                                    name="maleschooltype"
-                                                   #firstschooltype ="ngModel"
+                                                   #maleschooltype ="ngModel"
+                                                  required
                                                    >
                                             <label for="checkbox1"> ذكور </label>
-                                        </div>
+                                  
+                                        </div>-->
+                                     <div class="checkbox checkbox-pink">
+                                                <input id="checkbox1"
+                                                 type="checkbox"
+                                              required
+                                                name ="male"
+                                              ngModel
+                                                #male_school_type="ngModel"
+                                                >
+                                                <span *ngIf="!male_school_type.valid && male_school_type.touched " ></span>
+                                                <label for="checkbox1">
+                                                     ذكور 
+                                                </label>
+                                            </div>
+                                       
                                         <div class="checkbox checkbox-pink">
                                             <input id="checkbox2" type="checkbox"
+                                           
                                                    data-parsley-multiple="groups"
                                                    data-parsley-mincheck="2"
-                                                   ngModel
-                                                   name="femalschooltype"
-                                                   #secondeschooltype ="ngModel">
+                                                  required
+                                               ngModel 
+                                                   name="femal_school_type"
+                                                   #femal_school_type ="ngModel">
                                             <label for="checkbox2"> إناث  </label>
                                         </div>
-                                        <div class="checkbox checkbox-pink">
+                                        <!--  <div class="checkbox checkbox-pink">
                                             <input id="checkbox3" type="checkbox"
                                                    data-parsley-multiple="groups"
-                                                   data-parsley-mincheck="2" required
+                                                   data-parsley-mincheck="2" 
                                                    ngModel
-                                                   name="both"
-                                                   #thirdschooltype ="ngModel"
-                                                   >
+                                                required
+                                                   name="male_and_femal_school_type"
+                                                   #male_and_femal_school_type ="ngModel">
+                                                   
                                             <label for="checkbox3"> مختلطة </label>
-                                        </div>
+                                        </div>-->
+                                      
+                       
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -253,8 +307,9 @@
                                             <input id="checkbox4" type="checkbox"
                                                    data-parsley-multiple="group1"
                                                    ngModel
-                                                   name="fschoolstudy"
-                                                   #friststudytype ="ngModel"
+                                                 required
+                                                   name="frist_study_level"
+                                                   #frist_study_level ="ngModel"
                                                    >
                                             <label for="checkbox4"> ابتدائي  </label>
                                         </div>
@@ -262,8 +317,9 @@
                                             <input id="checkbox5" type="checkbox"
                                                    data-parsley-multiple="group1"
                                                    ngModel
-                                                   name="s-schoolstudy"
-                                                   #secondestudytype ="ngModel"
+                                                  required
+                                                   name="seconde_study_level"
+                                                   #seconde_study_level ="ngModel"
                                                    >
                                             <label for="checkbox5"> إعدادي </label>
                                         </div>
@@ -271,9 +327,10 @@
                                             <input id="checkbox6" type="checkbox"
                                                    data-parsley-multiple="group1"
                                                    data-parsley-maxcheck="1"
+                                                  required
                                                    ngModel
-                                                   name="l-3-schoolstudy"
-                                                   #thirdstudytype ="ngModel"
+                                                   name="third_school_level_litt"
+                                                   #third_school_level="ngModel"
                                                    >
                                             <label for="checkbox6"> ثانوي - أدبي  </label>
                                         </div>
@@ -282,31 +339,36 @@
                                                        data-parsley-multiple="group1"
                                                        data-parsley-maxcheck="1"
                                                        ngModel
-                                                       name="s-3-schoolstudy"
-                                                       #fourthstudytype="ngModel"
+                                                    required
+                                                       name="third_school_level_SCi"
+                                                       #third_school_level_litt="ngModel"
                                                        >
                                                 <label for="checkbox7"> ثانوي - علمي   </label>
                                             </div>
-                                            <div class="checkbox checkbox-pink">
+                                            <!--   <div class="checkbox checkbox-pink">
                                                     <input id="checkbox8" type="checkbox"
                                                            data-parsley-multiple="group1"
                                                            data-parsley-maxcheck="1"
                                                            ngModel
-                                                           name="both-s-l-3-schoolstudy"
-                                                           #fifthstudytype="ngModel"
+                                                           required
+                                                           name="third_school_level_SCi_litt"
+                                                           #third_school_level_SCi="ngModel"
                                                            >
                                                     <label for="checkbox8"> ثانوي - أدبي و علمي  </label>
-                                                </div>
-                                                <div class="checkbox checkbox-pink">
+                                                </div>-->
+                                         
+                                                <!-- <div class="checkbox checkbox-pink">
                                                         <input id="checkbox9" type="checkbox"
                                                                data-parsley-multiple="group1"
                                                                data-parsley-maxcheck="1"
                                                                ngModel
                                                                name="all"
-                                                               #sixstudytype="ngModel"
+                                                               required
+                                                               #third_school_level_SCi_ltt="ngModel"
                                                                >
                                                         <label for="checkbox9"> كافة المراحل    </label>
-                                                    </div>
+                                                    </div>-->
+                                               
                                     </div>
                                 </div>
                                 <div class="row">
@@ -321,12 +383,16 @@
                                         <input type="text " class="form-control" required
                                                data-parsley-minlength="6" placeholder="011..."
                                                ngModel 
-                                               name =" schooltelephone"
+                                               required
+                                               name ="schooltelephone"
                                                #telephonenumber="ngModel"
 
                                                />
                                     </div>
-                                    <span *ngIf="!telephonenumber.valid && telephonenumber.touched  "> يرجى إخال رقم الهاتف </span>
+                                    <span *ngIf="!telephonenumber.valid && telephonenumber.touched  ">
+                                           
+                                        يرجى إخال رقم الهاتف </span>
+                                   
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">رقم الهاتف : </label>
@@ -334,11 +400,17 @@
                                         <input type="text" class="form-control" required
                                                data-parsley-maxlength="6" placeholder="011...."
                                                ngModel
+                                               required
                                                name="schooltelephone2"
                                                #schoolnumber2="ngModel"
                                                />
                                     </div>
-                                    <span *ngIf="!schoolnumber2.valid &&schoolnumber2.touched"> يرجىى إخال رقم الهاتف </span>
+                                    <span *ngIf="!schoolnumber2.valid &&schoolnumber2.touched">
+                                           
+                                            يرجىى إخال رقم الهاتف </span>
+                                        <span *ngIf="schoolnumber2.valid &&schoolnumber2.touched">
+                                             
+                                            </span>
                                 </div>
                                 <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">عنوان المدرسة : </label>
@@ -346,21 +418,41 @@
                                             <textarea required class="form-control"
                                             placeholder="عنوان المدرسة "
                                             ngModel
+                                            required
                                             name="schooladdress"
                                             #schooladdress="ngModel"
                                             ></textarea>
                                         </div>
-                                        <span *ngIf=" !schooladdress.valid &&  schooladdress.touched"> يرجى إخال عنوان المدرسة </span>
+                                        <span *ngIf=" !schooladdress.valid &&  schooladdress.touched">
+                                               
+                                            يرجى إخال عنوان المدرسة </span>
+                                            <span *ngIf=" schooladdress.valid &&  schooladdress.touched">
+                                                        
+                                                </span>
                                     </div>
                                 <div class="form-group row m-b-0">
-                                    <div class="offset-sm-3 col-sm-9 m-t-15">
-                                        <button type="submit" class="btn btn-primary waves-effect waves-light"
-                                        [disabled]="!f.valid"
+                                    <div class="offset-sm-3 col-sm-9 m-t-15"
+                                    
+                                    >
+                                 
+                               
+                                        <button type="submit" 
+                                        class="btn btn-primary waves-effect waves-light"
+                                       
+                                    
                                         >
-                                           إنشاء حساب جديد 
+                                           التأكد من معلومات الإدخال 
                                         </button>
                                         <button type="reset" class="btn btn-secondary waves-effect m-l-5">
                                             إلغاء !
+                                            
+                                        </button>
+                                        <button type="button" class="btn btn-secondary waves-effect m-l-5"
+                                        [disabled]="!check_the_value"
+                                        (click)="sending_data()"
+                                        >
+                                            إنشاء حساب جديد  !
+                                            
                                         </button>
                                     </div>
                                 </div>
