@@ -403,11 +403,13 @@
                                         [disabled]="!check_the_value"
                                         (click)="sending_data()"
                                         routerLink ="/school"
+                                       
                                         >
                                             إنشاء حساب جديد  !
                                             
                                         </button>
-                                    </div>
+                                        <app-school [all_school_info]="temp" ></app-school>
+                                    </div     >
                                 </div>
                             </form>
                         </div>

@@ -6,7 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./school-profile.component.css']
 })
 export class SchoolProfileComponent implements OnInit {
-
+profile={email:String , password : String  , schoolname :String , male_school: Boolean 
+  , femaleschool: Boolean 
+  ,first_school_level_study:Boolean ,
+seconde_school_level :Boolean ,
+third_level_sturdyLII:Boolean ,
+third_level_study_sci :Boolean ,
+third_level_study_lii_sci:Boolean
+}
   constructor() { }
 
   ngOnInit(): void {
