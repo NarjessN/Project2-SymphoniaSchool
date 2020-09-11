@@ -4,6 +4,7 @@ import { HttpClientModule, HttpClient, HttpHeaders, HttpRequest } from '@angular
 import { NgbCheckBox } from '@ng-bootstrap/ng-bootstrap';
 import { isInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 import { Options } from 'selenium-webdriver/chrome';
+import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 
 
 @Component({
@@ -31,15 +32,18 @@ public  check_the_value  ;
  public last_value = false ;
  public counter=0;
   public temp 
+  public passing_data = false  
 public    array_for_input_field  =new Array<number>() ;
+//private router: Router
 
-
+pp
   //public  map: Map<String , any> = new Map<String,any>();
-  constructor ( private http : HttpClient) {
+  constructor ( private http : HttpClient  , private  router : Router) {
  
   }
 
   ngOnInit(): void {
+    
   }
 
 onSubmite(form: NgForm){
@@ -126,17 +130,25 @@ correct_input()
   this.last_value=true ;
   return this.check_the_value
 }*/
+data_should_pass()
+{
+  this.passing_data = true ;
+}
 sending_data(){
  // console.log(" we are in the sebding data function ")
-
+ this.passing_data=true;
  let p = new HttpHeaders({headers:"Access-Control-Allow-Origin': 'https://symphonia-school.firebaseapp.com/__/auth/handler"})
-
- 
-
   this.http.post('https://symphonia-school.firebaseapp.com/__/auth/handler',
   JSON.stringify(this.temp),{headers : p }).subscribe(responseData =>{
     console.log(responseData);
   } )  ;
-
+// this.router.navigate(['/school/',this.temp.email,'schoolposts'])
+let navigationExtras: NavigationExtras = {
+  queryParams: {
+      "email": "Nic",
+    
+  }
+};
+this.router.navigate(['/school/' , navigationExtras ,'schoolposts'],);
 }
 }

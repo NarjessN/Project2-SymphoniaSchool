@@ -19,8 +19,8 @@ const app_router :Routes=[
 {path:'' ,component: IntroductionComponent},
 {path: 'sing-in', component :SingInComponent},
 {path:'sing-up',component:SingUpComponent},
-{path:'school',component:SchoolComponent},
-{path:'school/schoolposts' ,component: SchoolPostsComponent},
+{path:'school/:schoolinfo',component:SchoolComponent},
+{path:'school/:schoolinfo/schoolposts' ,component: SchoolPostsComponent},
 {path:'school/about' ,component: AboutComponent},
 {path:'school/schoolprofile',component: SchoolProfileComponent}
 ];

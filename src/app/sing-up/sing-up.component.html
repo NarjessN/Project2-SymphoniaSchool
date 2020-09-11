@@ -224,6 +224,7 @@
                                                 <label for="checkbox1">
                                                      ذكور 
                                                 </label>
+                                          
                                             </div>
                                        
                                         <div class="checkbox checkbox-pink">
@@ -380,14 +381,14 @@
                                             يرجى إخال عنوان المدرسة </span>
                                             <span *ngIf=" schooladdress.valid &&  schooladdress.touched">
                                                         
+                                                
                                                 </span>
                                     </div>
                                 <div class="form-group row m-b-0">
                                     <div class="offset-sm-3 col-sm-9 m-t-15"
-                                    
+                                   
                                     >
-                                 
-                               
+                             
                                         <button type="submit" 
                                         class="btn btn-primary waves-effect waves-light"
                                        
@@ -399,21 +400,32 @@
                                             إلغاء !
                                             
                                         </button>
-                                        <button type="button" class="btn btn-secondary waves-effect m-l-5"
-                                        [disabled]="!check_the_value"
-                                        (click)="sending_data()"
-                                        routerLink ="/school"
+                                      
                                        
-                                        >
-                                            إنشاء حساب جديد  !
-                                            
-                                        </button>
-                                        <app-school [all_school_info]="temp" ></app-school>
-                                    </div     >
+                                    <button type="button" 
+                                    class="btn btn-secondary waves-effect m-l-5"
+                                    [disabled]="!check_the_value"
+                                   (click)="sending_data()"
+                                  
+                                  
+                                    >
+                                        إنشاء حساب جديد  !
+                                      
+                                    </button>
+                                    
+                                  
+                                    
                                 </div>
+                               
+                               
+                                </div> 
                             </form>
                         </div>
                     </div><!-- end col -->
+             
+                        
+
+                    
                 </div>
                 <!-- end row -->
 
