@@ -19,10 +19,10 @@ const app_router :Routes=[
 {path:'' ,component: IntroductionComponent},
 {path: 'sing-in', component :SingInComponent},
 {path:'sing-up',component:SingUpComponent},
-{path:'school/:schoolinfo',component:SchoolComponent},
+{path:'school',component:SchoolComponent},
 {path:'school/:schoolinfo/schoolposts' ,component: SchoolPostsComponent},
 {path:'school/about' ,component: AboutComponent},
-{path:'school/schoolprofile',component: SchoolProfileComponent}
+{path:'school/schoolprofile/:email',component: SchoolProfileComponent}
 ];
 @NgModule({
   declarations: [

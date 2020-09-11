@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Query } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
 import { HttpClientModule, HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { NgbCheckBox } from '@ng-bootstrap/ng-bootstrap';
@@ -32,6 +32,7 @@ public  check_the_value  ;
  public last_value = false ;
  public counter=0;
   public temp 
+
   public passing_data = false  
 public    array_for_input_field  =new Array<number>() ;
 //private router: Router
@@ -43,7 +44,7 @@ pp
   }
 
   ngOnInit(): void {
-    
+
   }
 
 onSubmite(form: NgForm){
@@ -52,6 +53,7 @@ onSubmite(form: NgForm){
 // ,form).subscribe(responseData =>{
 //   console.log(responseData);
 // } )
+
 
 if((form.controls.male.valid ||form.controls.femal_school_type.valid) 
 && (form.controls.frist_study_level.valid ||form.controls.seconde_study_level.valid
@@ -143,12 +145,7 @@ sending_data(){
     console.log(responseData);
   } )  ;
 // this.router.navigate(['/school/',this.temp.email,'schoolposts'])
-let navigationExtras: NavigationExtras = {
-  queryParams: {
-      "email": "Nic",
-    
-  }
-};
-this.router.navigate(['/school/' , navigationExtras ,'schoolposts'],);
+
+this.router.navigate(['/school/' ,this.temp.email ,'schoolposts']);
 }
 }

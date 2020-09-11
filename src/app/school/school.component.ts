@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute , Params, NavigationExtras} from '@angular/router';
+import { ActivatedRoute , Params, NavigationExtras, Router} from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-school',
@@ -7,7 +8,7 @@ import { ActivatedRoute , Params, NavigationExtras} from '@angular/router';
   styleUrls: ['./school.component.css']
 })
 export class SchoolComponent implements OnInit {
-
+subscreption : Subscription
    all_school_info : {
      email:String 
       , password : String 
@@ -23,18 +24,22 @@ export class SchoolComponent implements OnInit {
   post_list :String ,
   }
  
-temp : {email : String }
-  constructor( private route : ActivatedRoute) { }
+ private temp : {email : String }
+  constructor( private route : ActivatedRoute , private routing : Router ) { }
 
   ngOnInit(){
-    //this.temp={ email : this.route.snapshot.params['schoolinfo']}
-    this.temp=this.route.snapshot.params['schoolinfo']
+    this.temp={ email : this.route.snapshot.params['schoolinfo']}
+
    this.route.params.subscribe(( params: Params)  =>{
      this.temp.email=params['schoolinfo'];
   })
- 
+//  this.subscreption = this.route.params.subscribe((params :Params)=>{this.temp.})
+console.log(this.temp.email)
 
-console.log(this.temp.email);
+}
+sending_data(){
+  this.routing.navigate(['/school/schoolprofile/' ,this.temp.email]);
+  
 }
 }
 

@@ -83,13 +83,17 @@
                                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
 
                                     <!-- item-->
-                                    <a routerLink="/school/schoolprofile" class="dropdown-item notify-item">
-                                        <i class="ti-user m-r-5"></i> 
+                                    <a  class="dropdown-item notify-item"
+                                    (click)="sending_data()"
+                                    >
+                                        <i class="ti-user m-r-5"></i>  صفحة المدرسة 
+                                        
                                     </a>
 
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <i class="ti-settings m-r-5"></i> إعدادات 
+                                        
                                     </a>
 
                                     <!-- item-->
