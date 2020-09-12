@@ -1,5 +1,6 @@
 import { Component, OnInit ,NgModule } from '@angular/core';
 import{NgForm}from'@angular/forms';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-post',
@@ -14,7 +15,7 @@ export class CreatePostComponent implements OnInit {
   }
   onPost(post : NgForm){
     
-    
+   
     console.log(post.value.postContent);
     
 
