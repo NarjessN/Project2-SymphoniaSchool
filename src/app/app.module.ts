@@ -19,7 +19,8 @@ const app_router :Routes=[
 {path: 'sing-in', component :SingInComponent},
 {path:'sing-up',component:SingUpComponent},
 {path:'school',component:SchoolComponent},
-{path:'school/schoolposts' ,component: SchoolPostsComponent}
+{path:'school/schoolposts' ,component: SchoolPostsComponent},
+{path: 'school/create-post',component : CreatePostComponent}
 ];
 @NgModule({
   declarations: [

@@ -1,1 +1,54 @@
-<p>create-post works!</p>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-6">
+            <h1 class="home-text text-uppercase text-custom"> Start Creating Your Post </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+
+        </div>
+        <div class="col-6">
+            <div class="card-box ">
+                <form (ngSubmit)="onPost(p)" #p = "ngForm">
+                    <h2 class="header-title">Post</h2>
+                    <h5 class="m-t-40"><b>محتوى المنشور</b></h5>
+
+                    <div class="m-t-20">
+
+                        <textarea 
+                        id="textarea" 
+                        class="form-control"
+                         rows="20"
+                         ngModel
+                         name="postContent"
+                         required
+                         #postContent = "ngModel"
+                            placeholder="توصيف الوظيفة الشاغرة"></textarea>
+                            <span class="error has-error" *ngIf="!postContent.valid && postContent.touched">هذا الحقل مطلوب لنشر المنشور</span>
+                    </div>
+
+                    <div class="m-t-20 ">
+                        <h5 class="m-b-10"> العلامات المميزة للمنشور </h5>
+                        <div class="m-t-10">
+                            <div class="bootstrap-tagsinput"><span class="tag label label-info">Amsterdam<span
+                                        data-role="remove"></span></span>
+                                <span class="tag label label-info">Washington<span data-role="remove"></span></span>
+                                <span class="tag label label-info">Sydney<span data-role="remove"></span></span>
+                                <input type="text" placeholder="" [required]>
+                            </div>
+                            <select multiple="" data-role="tagsinput" style="display: none;">
+                                <option value="Amsterdam" selected="selected">Amsterdam</option>
+                                <option value="Washington" selected="selected">Washington</option>
+                                <option value="Sydney" selected="selected">Sydney</option>
+                            </select>
+                            <button type="submit" [disabled] = "!p.valid"
+                                class="btn btn-primary btn-rounded w-md waves-effect waves-light m-b-5 m-t-10">نشر</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
