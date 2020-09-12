@@ -20,18 +20,18 @@ export class SingUpComponent implements OnInit {
  private first_telephone_number : String;
  private seconde_telepjone_number : String ;
  private school_address : String 
- private male_school_type : boolean ;
- private female_school_type : boolean;
- private first_study_level : boolean ;
- private seconde_study_level : boolean ;
+ private male_school_type : Boolean ;
+ private female_school_type : Boolean;
+ private first_study_level : Boolean ;
+ private seconde_study_level : Boolean ;
  //private third_study_level : boolean ;
- private third_school_level_litt : boolean;
- private third_school_level_SCi: boolean  ;
+ private third_school_level_litt : Boolean;
+ private third_school_level_SCi: Boolean  ;
 //private third_school_level_SCi_litt : boolean ;
 public  check_the_value  ;
  public last_value = false ;
  public counter=0;
-  public temp 
+  public temp; 
 
   public passing_data = false  
 public    array_for_input_field  =new Array<number>() ;
@@ -63,7 +63,7 @@ if((form.controls.male.valid ||form.controls.femal_school_type.valid)
     && ( form.controls.email.valid) &&(form.controls.password.valid)
      &&(form.controls.confirmpassword.valid) &&(form.controls.password.value ===form.controls.confirmpassword.value)
      &&(form.controls.schooltelephone.valid) 
-     &&(form.controls.schooltelephone2.valid)
+     //&&(form.controls.schooltelephone2.valid)
      &&(form.controls.schooladdress.valid)
 )
 {
@@ -72,7 +72,7 @@ if((form.controls.male.valid ||form.controls.femal_school_type.valid)
 this.password=form.controls.password.value;
 this.school_name=form.controls.schoolname.value;
 this.first_telephone_number= form.controls.schooltelephone.value;
-this.seconde_telepjone_number = form.controls.schooltelephone2.value;
+//this.seconde_telepjone_number = form.controls.schooltelephone2.value; 
 this.male_school_type=form.controls.male.value;
 this.female_school_type = form.controls.femal_school_type.value;
 this.school_address=form.controls.schooladdress.value;
@@ -83,17 +83,33 @@ this.third_school_level_litt= form.controls.third_school_level_litt.value;
 this.third_school_level_SCi = form.controls.third_school_level_SCi.value;
 //this.third_school_level_SCi_litt = form.controls.third_school_level_SCi_litt.value;
 //this.schoolame=form.controls
-this.temp ={"email": this.email,"password":this.password,"school_name":this.school_name, 
-"school_address": this.school_address,
-"first_school_telephone" : this.first_telephone_number,
-"seconde_telephone_number":this.seconde_telepjone_number,
-"male_school_type": this.male_school_type,
-"female_school_type" : this.female_school_type,
-"first_study_level": this.first_study_level,
-"seconde_study_level": this.seconde_study_level,
+if(this.male_school_type!=true)
+{
+  this.male_school_type=false
+}
+if(this.female_school_type!=true)
+{
+  this.female_school_type=false 
+}
+if(this.first_study_level!=true)
+{this.first_study_level=false }
+if(this.seconde_study_level!=true)
+{this.seconde_study_level=false }
+if(this.third_school_level_SCi!=true)
+{this.third_school_level_SCi=false}
+if(this.third_school_level_litt!=true)
+{this.third_school_level_litt=false }
+this.temp ={email: this.email,password:this.password,name:this.school_name, 
+  address: this.school_address,
+phone_number : this.first_telephone_number,
+//seconde_school_telephone:this.seconde_telepjone_number,
+male_school_type: this.male_school_type,
+femal_school_type : this.female_school_type,
+first_school_level: this.first_study_level,
+seconde_school_level: this.seconde_study_level,
 //"third_study_level" : this.third_study_level,
-"third_school_level_litt": this.third_school_level_litt,
-"third_school_level_SCi" : this.third_school_level_SCi,
+third_school_level_litt: this.third_school_level_litt,
+third_school_level_sci : this.third_school_level_SCi,
 //"third_school_level_SCi_litt":this.third_school_level_SCi_litt
 } 
 /* for (let member in temp) {
@@ -139,13 +155,21 @@ data_should_pass()
 sending_data(){
  // console.log(" we are in the sebding data function ")
  this.passing_data=true;
- let p = new HttpHeaders({headers:"Access-Control-Allow-Origin': 'https://symphonia-school.firebaseapp.com/__/auth/handler"})
-  this.http.post('https://symphonia-school.firebaseapp.com/__/auth/handler',
-  JSON.stringify(this.temp),{headers : p }).subscribe(responseData =>{
+//  let p = new HttpHeaders({headers:"Access-Control-Allow-Origin': 'https://symphonia-school.firebaseapp.com/__/auth/handler"})
+//   this.http.post('https://symphonia-school.firebaseapp.com/__/auth/handler',
+//   JSON.stringify(this.temp),{headers : p }).subscribe(responseData =>{
+//     console.log(responseData);
+//   } )  ;
+// let p = new HttpHeaders({headers:"Access-Control-Allow-Origin: http://192.168.1.7:8000"})
+  this.http.post('http://192.168.137.122:8000/api/registerSchool',
+  this.temp).subscribe(responseData =>{
     console.log(responseData);
+    
   } )  ;
+ 
+  
 // this.router.navigate(['/school/',this.temp.email,'schoolposts'])
-
+///console.log(JSON.stringify(this.temp));
 this.router.navigate(['/school/' ,this.temp.email ,'schoolposts']);
 }
 }
