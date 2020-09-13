@@ -122,7 +122,7 @@ third_school_level_sci : this.third_school_level_SCi,
   //  console.log(JSON.stringify(temp))
     this.check_the_value=true 
  
-   // this.sending_data();
+   this.sending_data();
    console.log(this.temp)
 }
 else {

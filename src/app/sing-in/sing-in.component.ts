@@ -69,7 +69,7 @@ onSubmite(form: NgForm){
 this.email=form.controls.email.value;
 this.password=form.controls.password.value
 this.temp ={email: this.email , password : this.password}
- this.http.post('http://192.168.137.122:8000/api/schoolLogin'
+ this.http.post('http://192.168.1.107:8080/api/schoolLogin'
   ,this.temp).subscribe(responseData =>{
     console.log(responseData);
  } )

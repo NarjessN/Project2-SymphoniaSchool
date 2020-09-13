@@ -110,9 +110,7 @@
                                  <span    *ngIf="!email.valid && email.touched" class ="help-block"> يرجى إدخال البريد الالكتروني
                                
                                  </span> 
-                                 <span    *ngIf="email.valid && email.touched" class ="help-block"> يرجى إدخال البريد الالكتروني
-                                    
-                                     </span> 
+                               
                                 </div>
                                 <div class="form-group row">
                                     <label for="hori-pass1" class="col-sm-4 col-form-label">كلمة المرور : </label>
@@ -220,11 +218,11 @@
                                               ngModel
                                                 #male_school_type="ngModel"
                                                 >
-                                                <span *ngIf="!male_school_type.valid && male_school_type.touched " ></span>
+                                            
                                                 <label for="checkbox1">
                                                      ذكور 
                                                 </label>
-                                          
+                                              
                                             </div>
                                        
                                         <div class="checkbox checkbox-pink">
@@ -237,6 +235,7 @@
                                                    name="femal_school_type"
                                                    #femal_school_type ="ngModel">
                                             <label for="checkbox2"> إناث  </label>
+                                           
                                         </div>
                                         <!--  <div class="checkbox checkbox-pink">
                                             <input id="checkbox3" type="checkbox"
@@ -250,7 +249,9 @@
                                             <label for="checkbox3"> مختلطة </label>
                                         </div>-->
                                       
-                       
+                                        <span *ngIf="(!femal_school_type.valid && femal_school_type.touched) &&
+                                         (!male_school_type.valid && male_school_type.touched ) "  
+                                        class ="help-block">  <h5 class = "id">يرجى تحديد قيمة</h5>    </span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -283,7 +284,7 @@
                                                   required
                                                    ngModel
                                                    name="third_school_level_litt"
-                                                   #third_school_level="ngModel"
+                                                   #third_school_level_litt="ngModel"
                                                    >
                                             <label for="checkbox6"> ثانوي - أدبي  </label>
                                         </div>
@@ -294,10 +295,11 @@
                                                        ngModel
                                                     required
                                                        name="third_school_level_SCi"
-                                                       #third_school_level_litt="ngModel"
+                                                       #third_school_level_SCi="ngModel"
                                                        >
                                                 <label for="checkbox7"> ثانوي - علمي   </label>
                                             </div>
+                                            
                                             <!--   <div class="checkbox checkbox-pink">
                                                     <input id="checkbox8" type="checkbox"
                                                            data-parsley-multiple="group1"
@@ -321,7 +323,13 @@
                                                                >
                                                         <label for="checkbox9"> كافة المراحل    </label>
                                                     </div>-->
-                                               
+                                           <span *ngIf="
+                                           (!frist_study_level.valid && frist_study_level.touched) 
+                                           &&(!seconde_study_level.valid && seconde_study_level.touched) 
+                                           &&(!third_school_level_litt.valid && third_school_level_litt.touched)
+                                           &&(!third_school_level_SCi.valid &&  third_school_level_SCi.touched)  
+                                       "
+                                           > يرجى تحديد قيمة </span>    
                                     </div>
                                 </div>
                                 <div class="row">
@@ -394,7 +402,7 @@
                                        
                                     
                                         >
-                                           التأكد من معلومات الإدخال 
+                                           إنشاء حساب جديد  
                                         </button>
                                         <button type="reset" class="btn btn-secondary waves-effect m-l-5">
                                             إلغاء !
@@ -402,16 +410,7 @@
                                         </button>
                                       
                                        
-                                    <button type="button" 
-                                    class="btn btn-secondary waves-effect m-l-5"
-                                    [disabled]="!check_the_value"
-                                   (click)="sending_data()"
-                                  
-                                  
-                                    >
-                                        إنشاء حساب جديد  !
-                                      
-                                    </button>
+                                    
                                     
                                   
                                     
