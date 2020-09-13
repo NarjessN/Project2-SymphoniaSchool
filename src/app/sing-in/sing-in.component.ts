@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import {NgForm, NgModel } from '@angular/forms'
 import { __values } from 'tslib';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { global_var } from 'global_var';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class SingInComponent  {
   private email 
   private password 
   private temp;
-  constructor(private http : HttpClient) {
+  constructor(private http : HttpClient, private url_aravel : global_var) {
    
   }
 
@@ -66,10 +67,11 @@ onSubmite(form: NgForm){
   // ,form).subscribe(responseData =>{
   //   console.log(responseData);
   // } )
+  console.log()
 this.email=form.controls.email.value;
 this.password=form.controls.password.value
 this.temp ={email: this.email , password : this.password}
- this.http.post('http://192.168.1.107:8080/api/schoolLogin'
+ this.http.post(this.url_aravel.urlsingin
   ,this.temp).subscribe(responseData =>{
     console.log(responseData);
  } )

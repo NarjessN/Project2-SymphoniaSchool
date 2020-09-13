@@ -5,6 +5,7 @@ import { NgbCheckBox } from '@ng-bootstrap/ng-bootstrap';
 import { isInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 import { Options } from 'selenium-webdriver/chrome';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
+import { global_var } from 'global_var';
 
 
 @Component({
@@ -39,7 +40,7 @@ public    array_for_input_field  =new Array<number>() ;
 
 pp
   //public  map: Map<String , any> = new Map<String,any>();
-  constructor ( private http : HttpClient  , private  router : Router) {
+  constructor ( private http : HttpClient  , private  router : Router ,  private url_aravel : global_var) {
  
   }
 
@@ -161,7 +162,7 @@ sending_data(){
 //     console.log(responseData);
 //   } )  ;
 // let p = new HttpHeaders({headers:"Access-Control-Allow-Origin: http://192.168.1.7:8000"})
-  this.http.post('http://192.168.137.122:8000/api/registerSchool',
+  this.http.post(this.url_aravel.urlsingup,
   this.temp).subscribe(responseData =>{
     console.log(responseData);
     

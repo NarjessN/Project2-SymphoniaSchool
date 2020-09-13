@@ -13,6 +13,7 @@ import { SchoolPostsComponent } from './school/school-posts/school-posts.compone
 import { CreatePostComponent } from './school/school-posts/create-post/create-post.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SchoolProfileComponent } from './school/school-profile/school-profile.component';
+import { global_var } from 'global_var';
 
 
 const app_router :Routes=[
@@ -45,7 +46,7 @@ const app_router :Routes=[
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [global_var],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
