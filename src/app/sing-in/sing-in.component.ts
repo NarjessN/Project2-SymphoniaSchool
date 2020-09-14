@@ -4,6 +4,7 @@ import { __values } from 'tslib';
 import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
 import { global_var } from 'global_var';
 import { Route, Router } from '@angular/router';
+import { threadId } from 'worker_threads';
 
 
 @Component({
@@ -16,9 +17,12 @@ export class SingInComponent  {
   private email  :String 
   private password :String 
   private temp :{};
-private err:{};
-   token : String 
-   responce_status : Number 
+ private  responce_data : {}
+   //token : String 
+   error : String  = null 
+ token : String 
+ id : Number 
+ school_name : String 
   constructor(private http : HttpClient, private url_aravel : global_var , private router : Router) {
    
   }
@@ -71,6 +75,7 @@ onSubmite(form: NgForm){
   // ,form).subscribe(responseData =>{
   //   console.log(responseData);
   // } )
+ 
   if(form.controls.email.valid && form.controls.password.valid)
 {this.email=form.controls.email.value;
 this.password=form.controls.password.value
@@ -80,17 +85,22 @@ this.temp ={email: this.email , password : this.password}
 
 if(responseData.status === 200)
 {
-   this.temp = responseData.body
-this.token=this.temp['token']
-console.log(this.token)
+ this.token=responseData.body['token']
+ this.id = responseData.body['id']
+ //this.school_name = responseData.body['schoolname']
+ this.responce_data={token : this.token , id : this.id}
+ 
   this.router.navigate(['/school/' ,this.token ,'schoolposts']);
-
 }
  }
  ,error =>{
   if(error.status ===400)
   {
-
+this.error="هنالك خطأ  في البريد الالكتروني أو كلمة السر "
+}
+if(error.status ===500)
+{
+  this.error =" حدث خطأ في المخدم "
 }
  } );
 
