@@ -1,8 +1,9 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import {NgForm, NgModel } from '@angular/forms'
+import { Component, ErrorHandler } from '@angular/core';
+import {NgForm } from '@angular/forms'
 import { __values } from 'tslib';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
 import { global_var } from 'global_var';
+import { Route, Router } from '@angular/router';
 
 
 @Component({
@@ -12,10 +13,13 @@ import { global_var } from 'global_var';
 })
 
 export class SingInComponent  {
-  private email 
-  private password 
-  private temp;
-  constructor(private http : HttpClient, private url_aravel : global_var) {
+  private email  :String 
+  private password :String 
+  private temp :{};
+private err:{};
+   token : String 
+   responce_status : Number 
+  constructor(private http : HttpClient, private url_aravel : global_var , private router : Router) {
    
   }
 
@@ -67,14 +71,31 @@ onSubmite(form: NgForm){
   // ,form).subscribe(responseData =>{
   //   console.log(responseData);
   // } )
-  console.log()
-this.email=form.controls.email.value;
+  if(form.controls.email.valid && form.controls.password.valid)
+{this.email=form.controls.email.value;
 this.password=form.controls.password.value
 this.temp ={email: this.email , password : this.password}
  this.http.post(this.url_aravel.urlsingin
-  ,this.temp).subscribe(responseData =>{
-    console.log(responseData);
- } )
+  ,this.temp,{observe: 'response'}).subscribe(responseData =>{
+
+if(responseData.status === 200)
+{
+   this.temp = responseData.body
+this.token=this.temp['token']
+console.log(this.token)
+  this.router.navigate(['/school/' ,this.token ,'schoolposts']);
+
+}
+ }
+ ,error =>{
+  if(error.status ===400)
+  {
+
+}
+ } );
+
+}
+
 }
 }
   

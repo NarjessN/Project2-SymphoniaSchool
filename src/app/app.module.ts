@@ -12,10 +12,8 @@ import { AboutComponent } from './school/about/about.component';
 import { SchoolPostsComponent } from './school/school-posts/school-posts.component';
 import { CreatePostComponent } from './school/school-posts/create-post/create-post.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SchoolProfileComponent } from './school/school-profile/school-profile.component';
 import { global_var } from 'global_var';
-
-
+import { SchoolProfileComponent } from './school/school-profile/school-profile.component';
 const app_router :Routes=[
 {path:'' ,component: IntroductionComponent},
 {path: 'sing-in', component :SingInComponent},
