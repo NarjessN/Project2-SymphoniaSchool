@@ -54,6 +54,9 @@ sending_data(){
   this.routing.navigate(['/school/schoolprofile/' ,this.all_school_info['id']]);
   
 }
+sittings(){
+this.routing.navigate(['school/schoolsitting'])
+}
 }
 
 

@@ -33,6 +33,8 @@ public  check_the_value  ;
  public last_value = false ;
  public counter=0;
   public temp; 
+private rescponce_data :{}
+private token : String 
 
   public passing_data = false  
 public    array_for_input_field  =new Array<number>() ;
@@ -56,6 +58,7 @@ onSubmite(form: NgForm){
 // } )
 
 
+console.log(form)
 if((form.controls.male.valid ||form.controls.femal_school_type.valid) 
 && (form.controls.frist_study_level.valid ||form.controls.seconde_study_level.valid
   || form.controls.third_school_level_litt.valid 
@@ -108,69 +111,38 @@ male_school_type: this.male_school_type,
 femal_school_type : this.female_school_type,
 first_school_level: this.first_study_level,
 seconde_school_level: this.seconde_study_level,
-//"third_study_level" : this.third_study_level,
 third_school_level_litt: this.third_school_level_litt,
 third_school_level_sci : this.third_school_level_SCi,
-//"third_school_level_SCi_litt":this.third_school_level_SCi_litt
-} 
-/* for (let member in temp) {
-      this.map.set(member, temp[member]);
+}
 
-    } 
-  
-    console.log(this.map) */
 
-  //  console.log(JSON.stringify(temp))
-    this.check_the_value=true 
- 
    this.sending_data();
    console.log(this.temp)
 }
-else {
- return " the data will not me sending there is still missing value we have " 
-}
+
 
 }
-/*erro_input(  ){
 
-this.check_the_value=false ;
-return this.check_the_value
-}
-correct_input()
-{
- 
-  this.check_the_value=true;
-  console.log(this.check_the_value)
- // this.array_for_input_field.push(this.check_the_value);
-//this.counter++;
-//console.log(this.counter);
-/*if(this.counter===this.array_for_input_field.length)
-{
-  this.last_value=true ;
-  return this.check_the_value
-}*/
 data_should_pass()
 {
   this.passing_data = true ;
 }
 sending_data(){
- // console.log(" we are in the sebding data function ")
- this.passing_data=true;
-//  let p = new HttpHeaders({headers:"Access-Control-Allow-Origin': 'https://symphonia-school.firebaseapp.com/__/auth/handler"})
-//   this.http.post('https://symphonia-school.firebaseapp.com/__/auth/handler',
-//   JSON.stringify(this.temp),{headers : p }).subscribe(responseData =>{
-//     console.log(responseData);
-//   } )  ;
-// let p = new HttpHeaders({headers:"Access-Control-Allow-Origin: http://192.168.1.7:8000"})
   this.http.post(this.url_aravel.urlsingup,
-  this.temp).subscribe(responseData =>{
-    console.log(responseData);
+  this.temp,{observe: 'response'}).subscribe(responseData =>{
+    console.log(responseData.status );
+    if(responseData.status===200)
+    {
+      this.token=responseData.body['token']
     
+    this.token = responseData.body['token']
+    this.rescponce_data={ token : this.token}
+    this.router.navigate(['/school/' ,this.token ,'schoolposts'],{queryParams:this.rescponce_data});
+    }
+  if(responseData.status === 500)
+  {
+    
+  }
   } )  ;
- 
-  
-// this.router.navigate(['/school/',this.temp.email,'schoolposts'])
-///console.log(JSON.stringify(this.temp));
-this.router.navigate(['/school/' ,this.temp.email ,'schoolposts']);
 }
 }

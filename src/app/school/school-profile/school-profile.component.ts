@@ -7,14 +7,17 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./school-profile.component.css']
 })
 export class SchoolProfileComponent implements OnInit {
+  email:String 
+   password : String
+   schoolname :String 
+   male_school: Boolean  = true 
+ femaleschool: Boolean= true 
+ first_school_level_study:Boolean  
+seconde_school_level :Boolean= true 
+third_level_sturdyLii:Boolean = true
+third_level_study_sci :Boolean 
 
-profile:{email:String , password : String  , schoolname :String , male_school: Boolean 
-  , femaleschool: Boolean 
-  ,first_school_level_study:Boolean ,
-seconde_school_level :Boolean ,
-third_level_sturdyLII:Boolean ,
-third_level_study_sci :Boolean ,
-third_level_study_lii_sci:Boolean
+profile:{
 }
 temp:{email :String }
   constructor(private route : ActivatedRoute ) { }
@@ -23,8 +26,11 @@ temp:{email :String }
     this.temp={email:this.route.snapshot.params['email']}
     this.route.params.subscribe((para :Params)=>{this.temp.email=para['email']})
    // console.log(this.temp.email)
+  /*
+  --NOTE---
+  in the future we should pass an object 
+  */
   }
-write_it(){
-  return this.profile.email
-}
+  
+
 }

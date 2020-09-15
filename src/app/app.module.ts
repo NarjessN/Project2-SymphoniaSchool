@@ -14,6 +14,7 @@ import { CreatePostComponent } from './school/school-posts/create-post/create-po
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { global_var } from 'global_var';
 import { SchoolProfileComponent } from './school/school-profile/school-profile.component';
+import { SchoolSittingsComponent } from './school/school-sittings/school-sittings.component';
 const app_router :Routes=[
 {path:'' ,component: IntroductionComponent},
 {path: 'sing-in', component :SingInComponent},
@@ -21,7 +22,8 @@ const app_router :Routes=[
 {path:'school',component:SchoolComponent},
 {path:'school/:schoolinfo/schoolposts' ,component: SchoolPostsComponent},
 {path:'school/about' ,component: AboutComponent},
-{path:'school/schoolprofile/:email',component: SchoolProfileComponent}
+{path:'school/schoolprofile/:email',component: SchoolProfileComponent},
+{path:'school/schoolsitting',component: SchoolSittingsComponent}
 ];
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ const app_router :Routes=[
      SchoolPostsComponent,
      CreatePostComponent,
      SchoolProfileComponent,
+     SchoolSittingsComponent,
     
    
   ],

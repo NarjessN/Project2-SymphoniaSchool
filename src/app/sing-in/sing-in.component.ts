@@ -79,11 +79,7 @@ onSubmite(form: NgForm){
   if(form.controls.email.valid && form.controls.password.valid)
 {this.email=form.controls.email.value;
 this.password=form.controls.password.value
-this.temp ={email: this.email , password : this.password}
-this.token="token "
-this.id =1
-this.responce_data={token : this.token , id : this.id}
-this.router.navigate(['/school/' ,this.token ,'schoolposts'],{queryParams:this.responce_data}); 
+this.temp ={email: this.email , password : this.password} 
  this.http.post(this.url_aravel.urlsingin
   ,this.temp,{observe: 'response'}).subscribe(responseData =>{
   
