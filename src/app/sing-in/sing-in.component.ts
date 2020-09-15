@@ -4,7 +4,7 @@ import { __values } from 'tslib';
 import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
 import { global_var } from 'global_var';
 import { Route, Router } from '@angular/router';
-import { threadId } from 'worker_threads';
+
 
 
 @Component({
@@ -80,17 +80,21 @@ onSubmite(form: NgForm){
 {this.email=form.controls.email.value;
 this.password=form.controls.password.value
 this.temp ={email: this.email , password : this.password}
+this.token="token "
+this.id =1
+this.responce_data={token : this.token , id : this.id}
+this.router.navigate(['/school/' ,this.token ,'schoolposts'],{queryParams:this.responce_data}); 
  this.http.post(this.url_aravel.urlsingin
   ,this.temp,{observe: 'response'}).subscribe(responseData =>{
-
+  
 if(responseData.status === 200)
 {
  this.token=responseData.body['token']
  this.id = responseData.body['id']
+
  //this.school_name = responseData.body['schoolname']
  this.responce_data={token : this.token , id : this.id}
- 
-  this.router.navigate(['/school/' ,this.token ,'schoolposts']);
+this.router.navigate(['/school/' ,this.token ,'schoolposts'],{queryParams:this.responce_data});
 }
  }
  ,error =>{
