@@ -51,11 +51,12 @@ console.log(this.all_school_info['token'])
 console.log(this.all_school_info['id'])
 }
 sending_data(){
+  // changing it we shouls pass an object
   this.routing.navigate(['/school/schoolprofile/' ,this.all_school_info['id']]);
   
 }
 sittings(){
-this.routing.navigate(['school/schoolsitting'])
+this.routing.navigate(['school/schoolsitting/',this.all_school_info['token']])
 }
 }
 

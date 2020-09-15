@@ -57,7 +57,7 @@
 
                             <form
                           
-                          
+                          (ngSubmit)="onSubmite(f)" #f="ngForm"
                              class="form-horizontal" role="form"
                              data-parsley-validate novalidate>
                              
@@ -86,12 +86,7 @@
                                
                                 </div>
                              
-                                <div class="form-group">
-                                    <div class="offset-sm-4 col-sm-8">
-                                        <!--routerLink ="/sing-up"-->
-                                        <a routerLink ="/sing-in"> لدي حساب مسبقا</a>
-                                    </div>
-                                </div>
+                             
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <h5 class="m-b-5"><b>معلومات حساب المدرسة </b></h5>
@@ -132,18 +127,18 @@
                                             <label for="checkbox1"> ذكور </label>
                                   
                                         </div>-->
-                                     <div class="checkbox checkbox-pink">
+                                     <div class="checkbox checkbox-pink" >
                                                 <input id="checkbox1"
                                                  type="checkbox"
-                                              required
-                                                name ="male"
-                                              ngModel
-                                              
-                                                #male_school_type="ngModel"
+                                                 required
+                                                
+  [checked]="getdetails()"
+  [(ngModel)]="male_schoolp_type"
+                                        
                                                 >
                                             
                                                 <label for="checkbox1">
-                                                     ذكور 
+                                                 ffff {{male_schoolp_type}}  
                                                 </label>
                                               
                                             </div>
@@ -173,9 +168,9 @@
                                             <label for="checkbox3"> مختلطة </label>
                                         </div>-->
                                       
-                                        <span *ngIf="(!femal_school_type.valid && femal_school_type.touched) &&
+                                        <!-- <span *ngIf="(!femal_school_type.valid && femal_school_type.touched) &&
                                          (!male_school_type.valid && male_school_type.touched ) "  
-                                        class ="help-block">  <h5 class = "id">يرجى تحديد قيمة</h5>    </span>
+                                        class ="help-block">  <h5 class = "id">يرجى تحديد قيمة</h5>    </span> -->
                                     </div>
                                 </div>
                                 <div class="form-group row">

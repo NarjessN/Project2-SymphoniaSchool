@@ -23,7 +23,7 @@ const app_router :Routes=[
 {path:'school/:schoolinfo/schoolposts' ,component: SchoolPostsComponent},
 {path:'school/about' ,component: AboutComponent},
 {path:'school/schoolprofile/:email',component: SchoolProfileComponent},
-{path:'school/schoolsitting',component: SchoolSittingsComponent}
+{path:'school/schoolsitting/:token',component: SchoolSittingsComponent}
 ];
 @NgModule({
   declarations: [
