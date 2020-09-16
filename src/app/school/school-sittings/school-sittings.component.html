@@ -132,13 +132,16 @@
                                                  type="checkbox"
                                                  required
                                                 
-  [checked]="getdetails()"
+ [checked]="getdetails()"
   [(ngModel)]="male_schoolp_type"
-                                        
+  ngModel 
+  name ="male"
+  #male="ngModel"
+                                  
                                                 >
                                             
                                                 <label for="checkbox1">
-                                                 ffff {{male_schoolp_type}}  
+                                                 ffff   
                                                 </label>
                                               
                                             </div>
