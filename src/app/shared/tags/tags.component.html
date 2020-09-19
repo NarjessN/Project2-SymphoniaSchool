@@ -1,0 +1,133 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="card-box m-t-20">
+            <h2 class="header-title m-t-0 m-b-20"> مميزات الطلب الوظيفي</h2>
+            <div class="row">
+                <div class="col-6">
+                    <h2 class="header-title">الخدمات </h2>
+                    <div class="form-row">
+                        <div class="form-group col-md-1">
+                            
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState" class="col-form-label" >المرحلة الدراسية</label>
+                            <select  [(ngModel)]="selected_school_stage" id="inputState" class="form-control" (change) ="stageSelect()" >Choose
+                                <option  *ngFor="let item of school_stage ; index as i" [value]= "i">{{ item }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-7">
+                            <label for="subjectname" class="col-form-label" >اسم المادة</label>
+                            <div class="">
+                                <input ngModel type="text" list="subjects" class="form-control" id="subjectname" style="margin-bottom: 0 !important;"
+                                 (input)="subjectSearch($event.target.value)" [disabled] = "is_selected()" name = "subjects"
+                                  #subjects = "ngModel">
+                                <datalist id="subjects">
+                                    <option value="{{ item }}" *ngFor="let item of listResult">{{ item }}</option>
+                                </datalist>
+                                <span class="error has-error" *ngIf="!subjects.touched && subjects.disabled ">الرجاء اختيار المرحلة الدراسية</span>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-8">
+
+                        </div>
+                        <div class="form-group col-md-4">
+                            <h6 class="header-title m-t-10 m-b-10">:نوع الدوام</h6>
+                            <div class="radio radio-custom">
+                                <input type="radio" name="workTime" id="worktime1" value="part"  >
+                                <label for="worktime1" >
+                                        دوام كامل
+                                </label>
+                            </div>
+                            <div class="radio radio-purple">
+                                <input type="radio" name="workTime" id="worktime2" value="full">
+                                <label for="worktime2">
+                                    دوام جزءي
+                                </label>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group col-md-6">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <h6 class="header-title m-t-10 m-b-10">:سنوات الخبرة</h6>
+                                <input class="form-control" type="number">
+                        </div>
+                        <div class="form-group col-md-6">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <h6 class="header-title m-t-10 m-b-10">:مكان السكن</h6>
+                                <input class="form-control" type="text">
+                        </div>
+                        <div class=" col-md-6">
+                            <button type="submit" class="btn btn-success btn-rounded w-md waves-effect waves-light m-b-5 m-t-10" routerLink="/school/create-post">موافق</button>
+                        </div>
+                        <div class=" col-md-4">
+                            <button type="submit" class="btn btn-danger btn-rounded w-md waves-effect waves-light m-b-5 m-t-10" routerLink="/school/create-post" >الغاء</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <h6 class="header-title m-t-10 m-b-10">:الصفة الوظيفية</h6>
+                        <div class="radio radio-custom">
+                            <input type="radio" name="teacherType" id="teacherType" value="teacher" min="0" max="150" >
+                            <label for="teacherType" >
+                                استاذ
+                            </label>
+                        </div>
+                        <div class="radio radio-warning">
+                            <input type="radio" name="teacherType" id="teacherType1" value="under graduation">
+                            <label for="teacherType1">
+                                استاذ مساعد (غير متخرج)
+                            </label>
+                        </div>
+                        <div class="radio radio-purple">
+                            <input type="radio" name="teacherType" id="teacherType2" value="corrector">
+                            <label for="teacherType2">
+                                مصحح
+                            </label>
+                        </div>
+                        <div class="radio radio-success">
+                            <input type="radio" name="teacherType" id="teacherType3" value="observer">
+                            <label for="teacherType3">
+                                مدقق
+                            </label>
+                        </div>
+                        <h6 class="header-title m-t-10 m-b-10">نوع الموظف :</h6>
+                        <div class="radio radio-custom">
+                            <input type="radio" name="gender" id="male" value="male"  >
+                            <label for="male" >
+                                ذكر
+                            </label>
+                        </div>
+                        <div class="radio radio-warning">
+                            <input type="radio" name="gender" id="female" value="female">
+                            <label for="female">
+                                انثى
+                            </label>
+                        </div>
+                        <h6 class="header-title m-t-10 m-b-10">نوع الطلاب :</h6>
+                        <div class="radio radio-custom">
+                            <input type="radio" name="studentGender" id="studentGender" value="male"  >
+                            <label for="studentGender" >
+                                ذكر
+                            </label>
+                        </div>
+                        <div class="radio radio-warning">
+                            <input type="radio" name="studentGender" id="studentGender1" value="female">
+                            <label for="studentGender1">
+                                انثى
+                            </label>
+                        </div>
+                        <div class="radio radio-success">
+                            <input type="radio" name="studentGender" id="studentGender2" value="both">
+                            <label for="studentGender2">
+                                مختلطة
+                            </label>
+                        </div>
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

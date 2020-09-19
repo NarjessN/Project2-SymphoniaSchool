@@ -13,17 +13,23 @@ import { SchoolPostsComponent } from './school/school-posts/school-posts.compone
 import { CreatePostComponent } from './school/school-posts/create-post/create-post.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SchoolProfileComponent } from './school/school-profile/school-profile.component';
+import { TagsComponent } from './shared/tags/tags.component';
+import { NavbarComponent} from './shared/navbar/navbar.component'
+
 
 
 const app_router :Routes=[
 {path:'' ,component: IntroductionComponent},
 {path: 'sing-in', component :SingInComponent},
-{path:'sing-up',component:SingUpComponent},
-{path:'school',component:SchoolComponent},
+{path:'sing-up',component:SingUpComponent}
+];
+const school_router : Routes = [
+  {path:'school',component:SchoolComponent},
 {path:'school/schoolposts' ,component: SchoolPostsComponent},
 {path: 'school/create-post',component : CreatePostComponent},
 {path:'school/about' ,component: AboutComponent},
-{path:'school/schoolprofile',component: SchoolProfileComponent}
+{path:'school/schoolprofile',component: SchoolProfileComponent},
+{path:'school/tags', component:TagsComponent}
 ];
 @NgModule({
   declarations: [
@@ -36,12 +42,15 @@ const app_router :Routes=[
      SchoolPostsComponent,
      CreatePostComponent,
      SchoolProfileComponent,
+     TagsComponent,
+     NavbarComponent,
     
    
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(app_router),
+    RouterModule.forRoot(school_router),
     FormsModule,
     HttpClientModule,
     NgbModule
