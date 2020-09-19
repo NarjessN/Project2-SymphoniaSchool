@@ -12,24 +12,25 @@ import { AboutComponent } from './school/about/about.component';
 import { SchoolPostsComponent } from './school/school-posts/school-posts.component';
 import { CreatePostComponent } from './school/school-posts/create-post/create-post.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { global_var } from 'global_var';
 import { SchoolProfileComponent } from './school/school-profile/school-profile.component';
 import { TagsComponent } from './shared/tags/tags.component';
 import { NavbarComponent} from './shared/navbar/navbar.component'
 
-
-
+import { SchoolSittingsComponent } from './school/school-sittings/school-sittings.component';
 const app_router :Routes=[
 {path:'' ,component: IntroductionComponent},
 {path: 'sing-in', component :SingInComponent},
-{path:'sing-up',component:SingUpComponent}
-];
-const school_router : Routes = [
-  {path:'school',component:SchoolComponent},
-{path:'school/schoolposts' ,component: SchoolPostsComponent},
-{path: 'school/create-post',component : CreatePostComponent},
+{path:'sing-up',component:SingUpComponent},
+{path:'school',component:SchoolComponent},
+{path:'school/:schoolinfo/schoolposts' ,component: SchoolPostsComponent},
 {path:'school/about' ,component: AboutComponent},
-{path:'school/schoolprofile',component: SchoolProfileComponent},
+{path:'school/schoolprofile/:email',component: SchoolProfileComponent},
+{path: 'school/create-post',component : CreatePostComponent},
+{path:'school/schoolsitting/:token',component: SchoolSittingsComponent},
 {path:'school/tags', component:TagsComponent}
+
+
 ];
 @NgModule({
   declarations: [
@@ -44,18 +45,18 @@ const school_router : Routes = [
      SchoolProfileComponent,
      TagsComponent,
      NavbarComponent,
+     SchoolSittingsComponent,
     
    
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(app_router),
-    RouterModule.forRoot(school_router),
     FormsModule,
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [global_var],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

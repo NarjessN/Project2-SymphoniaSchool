@@ -8,151 +8,16 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+       
 
 
     </head>
 
     <body>
 
-        <script>
-            $(function(){
-              $("#nav-placeholder").load("school.component.html");
-            });
-            </script>
+         
         <!-- Navigation Bar-->
-        <header id="topnav">
-            <div class="topbar-main">
-                <div class="container-fluid">
-
-                    <!-- Logo container-->
-                    <div class="logo">
-                        <!-- Text Logo -->
-                        <!--<a href="index.html" class="logo">-->
-                            <!--<span class="logo-small"><i class="mdi mdi-radar"></i></span>-->
-                            <!--<span class="logo-large"><i class="mdi mdi-radar"></i> Adminto</span>-->
-                        <!--</a>-->
-                        <!-- Image Logo -->
-                        <span> سنفونيا سكول </span>
-                        
-
-                    </div>
-                    <!-- End Logo container-->
-
-
-                    <div class="menu-extras topbar-custom">
-
-                        <ul class="list-unstyled topbar-right-menu float-right mb-0">
-
-                            <li class="menu-item">
-                                <!-- Mobile menu toggle-->
-                                <a class="navbar-toggle nav-link">
-                                    <div class="lines">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </a>
-                                <!-- End mobile menu toggle-->
-                            </li>
-                            <li class="hide-phone">
-                                <form class="app-search">
-                                    <input type="text" placeholder="Search..."
-                                           class="form-control">
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </form>
-                            </li>
-                            <li>
-                                <!-- Notification -->
-                                <div class="notification-box">
-                                    <ul class="list-inline mb-0">
-                                        <li>
-                                            <a href="javascript:void(0);" class="right-bar-toggle">
-                                                <i class="mdi mdi-bell-outline noti-icon"></i>
-                                            </a>
-                                            <div class="noti-dot">
-                                                <span class="dot"></span>
-                                                <span class="pulse"></span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- End Notification bar -->
-                            </li>
-
-                            <li class="dropdown notification-list">
-                                <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
-                                   aria-haspopup="false" aria-expanded="false">
-								
-								   <img src="assets/images/ID18.png" alt="user" class="rounded-circle">
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-
-                                    <!-- item-->
-                                    <a routerLink="/school/schoolprofile" class="dropdown-item notify-item">
-                                        <i class="ti-user m-r-5"></i> صفحة المدرسة 
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="ti-settings m-r-5"></i> إعدادات
-                                    </a>
-
-                                    <!-- item-->
-                                  
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <i class="ti-power-off m-r-5"></i> تسجيل خروج 
-                                    </a>
-
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <!-- end menu-extras -->
-
-                    <div class="clearfix"></div>
-
-                </div> <!-- end container -->
-            </div>
-            <!-- end topbar-main -->
-
-            <div class="navbar-custom">
-                <div class="container-fluid">
-                    <div id="navigation">
-                        <!-- Navigation Menu-->
-                        <ul class="navigation-menu">
-                            <li class="has-submenu">
-                                <a routerLink ="/school/schoolposts" ><i class="mdi mdi-view-dashboard"></i> <span> منشورات المدرسة  </span> </a>
-                            </li>
-                            <li class="has-submenu">
-                                <a href="#"><i class="mdi mdi-invert-colors"></i> <span>  صندوق الوارد لطلبات العمل المرسلة    </span> </a>
-                           
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#"><i class="mdi mdi-texture"></i><span> البحث عن أستاذ </span> </a>
-                               
-                            </li>
-
-                            <li class="has-submenu">
-                                <a href="#"><i class="mdi mdi-view-list"></i> <span> طلبات توظيف  </span> </a>
-                             
-                            </li>
-
-                            <li class="has-submenu">
-                                <a  routerLink ="/school/about"><i class="mdi mdi-chart-donut-variant"></i><span> من نحن ؟  </span> </a>
-                              
-                            </li>
-           
-                        </ul>
-                        <!-- End navigation menu -->
-                    </div> <!-- end #navigation -->
-                </div> <!-- end container -->
-            </div> <!-- end navbar-custom -->
-        </header>
+   <app-school></app-school>
         <!-- End Navigation Bar-->
 
 
@@ -175,19 +40,20 @@
                                 <div class="profile-info-detail">
                                     <h4 class="m-0">معلومات عن المدرسة </h4>
                                     <label class="col-sm-3 col-form-label"> البريد الالكتروني : </label>
-                                    <span class="form-control">testing@gamil.com </span>
+                                    <span class="form-control">{{temp.email}} </span>
                                     <label class="col-sm-3 col-form-label">اسم المدرسة  : </label>
                                     <span class="form-control">منارة العلم  </span>
                                     <label class="col-sm-3 col-form-label"> نوع المدرسة   : </label>
-                                    <span class="form-control"> ذكور   </span>
-                                    <label class="col-sm-3 col-form-label"> المرحلة التعليمة   : </label>
-                                    <span class="form-control"> ابتدائي    </span>
+                                    <span class="form-control"  *ngIf="male_school === true && femaleschool=== true ">  إناث  -  ذكور   </span>
+                                    
+                                    <label class="col-sm-3 col-form-label" > المرحلة التعليمة   : </label>
+                                    <span class="form-control" *ngIf ="seconde_school_level=== true && third_level_sturdyLii===true"> إعدادي - ثانوي أدبي    </span>
+                                    <span class="form-control" *ngIf ="seconde_school_level=== true && third_level_study_sci===true"> إعدادي - ثانوي علمي    </span>
                                     <hr>
                                     <h4 class="m-0">معلومات التواصل  </h4>
                                     <label class="col-sm-3 col-form-label"> رقم هاتف1   : </label>
                                     <span class="form-control"> ابتدائي    </span>
-                                    <label class="col-sm-3 col-form-label"> رقم هاتف2   : </label>
-                                    <span class="form-control"> ابتدائي    </span>
+                                    
                                     <label class="col-sm-3 col-form-label">عنوان المدرسة   : </label>
                                    <p class="col-sm-3 col-form-label"> </p>
                                 </div>

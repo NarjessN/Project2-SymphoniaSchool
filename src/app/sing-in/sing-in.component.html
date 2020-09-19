@@ -14,7 +14,7 @@
         </div>
         <div class="p-20">
           <form 
-          (ngSubmit)="onSubmit(f)" #f="ngForm"
+          (ngSubmit)="onSubmite(f)" #f="ngForm"
           class="form-horizontal m-t-20" action="index.html">
             
             <div class="form-group">
@@ -27,7 +27,10 @@
                 #email="ngModel"
                  >
               </div>
-             <span  *ngIf="!email.valid && email.touched" class ="help-block" > يرجى إدخال البريد الالكتروني</span>
+             <span  *ngIf="!email.valid && email.touched" class ="help-block" > يرجى إدخال البريد الالكتروني
+
+
+             </span>
             </div>
             <div class="form-group">
               <div class="col-xs-12">
@@ -39,9 +42,12 @@
                   #password ="ngModel"
                   >
               </div>
-              <span *ngIf="!password.valid && password.touched"> يرجى إدخال كلمة السر  </span>
+              <span *ngIf="!password.valid && password.touched"> يرجى إدخال كلمة السر 
+                
+             
+                 </span>
             </div>
-            
+            <span *ngIf="error != null ">  <h5>{{error}}</h5>  </span>
             <div class="form-group ">
               <div class="col-xs-12">
                           <div class="checkbox checkbox-custom">
@@ -58,8 +64,7 @@
                       <div class="col-xs-12">
                         <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light"
                          type="submit"
-                         routerLink ="/school"
-                         [disabled]="!f.valid"
+                                               
                          >Log In</button>
                       </div>
                   

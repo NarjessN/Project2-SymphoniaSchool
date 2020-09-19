@@ -1,34 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Adminto - Responsive Admin Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    </head>
+
+    <body>
 
         <!-- Navigation Bar-->
         <header id="topnav">
-            <div class="topbar-main">
-                <div class="container-fluid">
-
-                    <!-- Logo container-->
-                    <div class="logo">
-                        <!-- Text Logo -->
-                        <!--<a href="index.html" class="logo">-->
-                            <!--<span class="logo-small"><i class="mdi mdi-radar"></i></span>-->
-                            <!--<span class="logo-large"><i class="mdi mdi-radar"></i> Adminto</span>-->
-                        <!--</a>-->
-                        <!-- Image Logo -->
-                        <!--<a href="index.html" class="logo">
-                            <img src="assets/images/logo-sm.png" alt="" height="26" class="logo-small">
-                            <img src="assets/images/logo.png" alt="" height="24" class="logo-large">
-                        </a>-->
-                        <a routerLink ="/">سنفونيا سكول</a>  
-                    </div>
-                    <!-- End Logo container-->
-
-                  
-                    <!-- end menu-extras -->
-
-                    <div class="clearfix"></div>
-
-                </div> <!-- end container -->
-            </div>
-            <!-- end topbar-main -->
-
+          <app-school></app-school>
                     </header>
         <!-- End Navigation Bar-->
 
@@ -70,8 +56,8 @@
                             
 
                             <form
-                            (ngSubmit)="onSubmite(f)" #f="ngForm"
                           
+                          (ngSubmit)="onSubmite(f)" #f="ngForm"
                              class="form-horizontal" role="form"
                              data-parsley-validate novalidate>
                              
@@ -99,66 +85,8 @@
                                  </span> 
                                
                                 </div>
-                                <div class="form-group row">
-                                    <label for="hori-pass1" class="col-sm-4 col-form-label">كلمة المرور : </label>
-                                    <div class="col-sm-7">
-                                        <input id="hori-pass1" type="password" 
-                                        placeholder="كلمة المرور " 
-                                        required
-                                    class="form-control"
-                                    ngModel
-                                    name ="password"
-                                    #password ="ngModel"
-                                    >
-                                    </div>
-                                    <span *ngIf="!password.valid && password.touched" 
-                                     class ="help-block"> يرجى إدخال كلمة السر 
-                                   
-                                    </span>
-                                    <span *ngIf="password.valid && password.touched" 
-                                    class ="help-block"> 
-                                   </span>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="hori-pass2" class="col-sm-4 col-form-label">التأكيد على كلمة المرور 
-                                        :  </label>
-                                    <div class="col-sm-7">
-                                        <input data-parsley-equalto="#hori-pass1" type="password" required
-                                               placeholder="التأكيد على كلمة المرور " 
-                                               class="form-control"
-                                                id="hori-pass2"
-                                                ngModel 
-                                                name="confirmpassword"
-                                                #cp="ngModel"
-                                               
-                                             
-                                                >
-                                    </div>
-                                    <span   *ngIf="(cp.value != password.value )  && cp.touched && password.valid && cp.valid" class ="help-block">
-                                   <h4>كلمة المرور ليست نفسها
-                                         
-                                </h4>    
-                                                    </span>
-                                                    <span *ngIf="!cp.valid && cp.touched" class ="help-block">
-                                                        <h5>
-                                                                
-                                                            يرجى التاأكيد على كلمة المرور  </h5>    
-                                                                         </span>
-                                     <span *ngIf="(cp.value === password.value )  && cp.touched && password.valid && cp.valid" class ="help-block"><h3>كلمة المرور متطابقة
-                                                
-                                    </h3>  </span>
-                                    <span *ngIf="(cp.value === password.value )  && cp.touched && password.valid && cp.valid" class ="help-block"><h3>
-                                                 
-                                    </h3>  </span>
-                                </div>
-
-                               
-                                <div class="form-group">
-                                    <div class="offset-sm-4 col-sm-8">
-                                        <!--routerLink ="/sing-up"-->
-                                        <a routerLink ="/sing-in"> لدي حساب مسبقا</a>
-                                    </div>
-                                </div>
+                             
+                             
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <h5 class="m-b-5"><b>معلومات حساب المدرسة </b></h5>
@@ -199,18 +127,21 @@
                                             <label for="checkbox1"> ذكور </label>
                                   
                                         </div>-->
-                                     <div class="checkbox checkbox-pink">
+                                     <div class="checkbox checkbox-pink" >
                                                 <input id="checkbox1"
                                                  type="checkbox"
-                                              required
-                                                name ="male"
-                                              ngModel
-                                              
-                                                #male_school_type="ngModel"
+                                                 required
+                                                
+ [checked]="getdetails()"
+  [(ngModel)]="male_schoolp_type"
+  ngModel 
+  name ="male"
+  #male="ngModel"
+                                  
                                                 >
                                             
                                                 <label for="checkbox1">
-                                                     ذكور 
+                                                 ffff   
                                                 </label>
                                               
                                             </div>
@@ -240,9 +171,9 @@
                                             <label for="checkbox3"> مختلطة </label>
                                         </div>-->
                                       
-                                        <span *ngIf="(!femal_school_type.valid && femal_school_type.touched) &&
+                                        <!-- <span *ngIf="(!femal_school_type.valid && femal_school_type.touched) &&
                                          (!male_school_type.valid && male_school_type.touched ) "  
-                                        class ="help-block">  <h5 class = "id">يرجى تحديد قيمة</h5>    </span>
+                                        class ="help-block">  <h5 class = "id">يرجى تحديد قيمة</h5>    </span> -->
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -393,10 +324,10 @@
                                        
                                     
                                         >
-                                           إنشاء حساب جديد  
+                                           حفظ التعديلات   
                                         </button>
                                         <button type="reset" class="btn btn-secondary waves-effect m-l-5">
-                                            إلغاء !
+                                            reset !
                                             
                                         </button>
                                       
@@ -504,6 +435,20 @@
         <!-- end wrapper -->
 
 
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        2016 - 2018 © Adminto. Coderthemes.com
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
 
 
 
+
+    </body>
+</html>
